@@ -1,0 +1,327 @@
+{
+  "profileName": "クラスマッチテンプレート",
+  "profileVersion": 1,
+  "sports": [
+    {
+      "id": "soccer",
+      "name": "サッカー",
+      "venue": "",
+      "courts": [
+        {
+          "venue": "校庭",
+          "court": "Aコート"
+        },
+        {
+          "venue": "校庭",
+          "court": "Bコート"
+        }
+      ],
+      "format": "league_then_tournament",
+      "groups": {
+        "enabled": true,
+        "defaultCount": 3
+      },
+      "timing": {
+        "matchMinutes": 20
+      },
+      "scoreRule": {
+        "type": "formula",
+        "bonus": [],
+        "points": {
+          "participation": 0
+        },
+        "formula": "if(rank <= 4, winsWithoutThirdPlace * 10 + teamCount * 8 / rank, if(best8Only, winsWithoutThirdPlace * 10 + teamCount, 0))",
+        "manualEnabled": true,
+        "classAggregation": "sum"
+      },
+      "tournament": {
+        "enabled": true,
+        "thirdPlace": true,
+        "advanceTeams": 9,
+        "placementAutoDetect": true
+      },
+      "rankingRule": {
+        "league": [
+          "wins",
+          "goalDifference",
+          "goalsFor",
+          "manual"
+        ]
+      }
+    },
+    {
+      "id": "boy-basketball",
+      "name": "男子バスケットボール",
+      "venue": "",
+      "courts": [
+        {
+          "venue": "体育館",
+          "court": "Aコート"
+        }
+      ],
+      "format": "league_then_tournament",
+      "groups": {
+        "enabled": true,
+        "defaultCount": 4
+      },
+      "timing": {
+        "matchMinutes": 15
+      },
+      "scoreRule": {
+        "type": "formula",
+        "bonus": [],
+        "points": {
+          "participation": 0
+        },
+        "formula": "if(rank <= 4, winsWithoutThirdPlace * 10 + teamCount * 8 / rank, if(best8Only, winsWithoutThirdPlace * 10 + teamCount, 0))",
+        "manualEnabled": true,
+        "classAggregation": "sum"
+      },
+      "tournament": {
+        "enabled": true,
+        "thirdPlace": true,
+        "advanceTeams": 5,
+        "placementAutoDetect": true
+      },
+      "rankingRule": {
+        "league": [
+          "wins",
+          "goalDifference",
+          "goalsFor",
+          "manual"
+        ]
+      }
+    },
+    {
+      "id": "girl-basketball",
+      "name": "女子バスケットボール",
+      "venue": "",
+      "courts": [
+        {
+          "venue": "体育館",
+          "court": "Bコート"
+        }
+      ],
+      "format": "league_then_tournament",
+      "groups": {
+        "enabled": true,
+        "defaultCount": 3
+      },
+      "timing": {
+        "matchMinutes": 15
+      },
+      "scoreRule": {
+        "type": "formula",
+        "bonus": [],
+        "points": {
+          "participation": 0
+        },
+        "formula": "if(rank <= 4, winsWithoutThirdPlace * 10 + teamCount * 8 / rank, if(best8Only, winsWithoutThirdPlace * 10 + teamCount, 0))",
+        "manualEnabled": true,
+        "classAggregation": "sum"
+      },
+      "tournament": {
+        "enabled": true,
+        "thirdPlace": true,
+        "advanceTeams": 5,
+        "placementAutoDetect": true
+      },
+      "rankingRule": {
+        "league": [
+          "wins",
+          "goalDifference",
+          "goalsFor",
+          "manual"
+        ]
+      }
+    },
+    {
+      "id": "boy-volleyball",
+      "name": "男子バレーボール",
+      "venue": "",
+      "courts": [
+        {
+          "venue": "バレーボールコート",
+          "court": "Aコート"
+        },
+        {
+          "venue": "バレーボールコート",
+          "court": "Bコート"
+        }
+      ],
+      "format": "league_then_tournament",
+      "groups": {
+        "enabled": true,
+        "defaultCount": 3
+      },
+      "timing": {
+        "matchMinutes": 20
+      },
+      "scoreRule": {
+        "type": "formula",
+        "bonus": [],
+        "points": {
+          "participation": 0
+        },
+        "formula": "if(rank <= 4, winsWithoutThirdPlace * 10 + teamCount * 8 / rank, if(best8Only, winsWithoutThirdPlace * 10 + teamCount, 0))",
+        "manualEnabled": true,
+        "classAggregation": "sum"
+      },
+      "tournament": {
+        "enabled": true,
+        "thirdPlace": true,
+        "advanceTeams": 6,
+        "placementAutoDetect": true
+      },
+      "rankingRule": {
+        "league": [
+          "wins",
+          "goalDifference",
+          "goalsFor",
+          "manual"
+        ]
+      }
+    },
+    {
+      "id": "girl-volleyball",
+      "name": "女子バレーボール",
+      "venue": "",
+      "courts": [
+        {
+          "venue": "バレーボールコート",
+          "court": "Cコート"
+        },
+        {
+          "venue": "バレーボールコート",
+          "court": "Dコート"
+        }
+      ],
+      "format": "league_then_tournament",
+      "groups": {
+        "enabled": true,
+        "defaultCount": 4
+      },
+      "timing": {
+        "matchMinutes": 20
+      },
+      "scoreRule": {
+        "type": "formula",
+        "bonus": [],
+        "points": {
+          "participation": 0
+        },
+        "formula": "if(rank <= 4, winsWithoutThirdPlace * 10 + teamCount * 8 / rank, if(best8Only, winsWithoutThirdPlace * 10 + teamCount, 0))",
+        "manualEnabled": true,
+        "classAggregation": "sum"
+      },
+      "tournament": {
+        "enabled": true,
+        "thirdPlace": true,
+        "advanceTeams": 6,
+        "placementAutoDetect": true
+      },
+      "rankingRule": {
+        "league": [
+          "wins",
+          "goalDifference",
+          "goalsFor",
+          "manual"
+        ]
+      }
+    },
+    {
+      "id": "dodgeball",
+      "name": "ドッジボール",
+      "venue": "",
+      "courts": [
+        {
+          "venue": "テニスコート",
+          "court": "Aコート"
+        },
+        {
+          "venue": "テニスコート",
+          "court": "Bコート"
+        }
+      ],
+      "format": "league_then_tournament",
+      "groups": {
+        "enabled": true,
+        "defaultCount": 2
+      },
+      "timing": {
+        "matchMinutes": 30
+      },
+      "scoreRule": {
+        "type": "formula",
+        "bonus": [],
+        "points": {
+          "participation": 0
+        },
+        "formula": "if(rank <= 4, winsWithoutThirdPlace * 10 + teamCount * 4 / rank, if(best8Only, winsWithoutThirdPlace * 10 + teamCount, 0))",
+        "manualEnabled": true,
+        "classAggregation": "sum"
+      },
+      "tournament": {
+        "enabled": true,
+        "thirdPlace": true,
+        "advanceTeams": 6,
+        "placementAutoDetect": true
+      },
+      "rankingRule": {
+        "league": [
+          "wins",
+          "goalDifference",
+          "goalsFor",
+          "manual"
+        ]
+      }
+    },
+    {
+      "id": "tabletennis",
+      "name": "卓球",
+      "venue": "",
+      "courts": [
+        {
+          "venue": "多目的ホール",
+          "court": "Aコート"
+        },
+        {
+          "venue": "多目的ホール",
+          "court": "Bコート"
+        }
+      ],
+      "format": "league_then_tournament",
+      "groups": {
+        "enabled": true,
+        "defaultCount": 3
+      },
+      "timing": {
+        "matchMinutes": 30
+      },
+      "scoreRule": {
+        "type": "formula",
+        "bonus": [],
+        "points": {
+          "participation": 0
+        },
+        "formula": "if(rank <= 4, winsWithoutThirdPlace * 10 + teamCount * 6 / rank, if(best8Only, winsWithoutThirdPlace * 10 + teamCount, 0))",
+        "manualEnabled": true,
+        "classAggregation": "sum"
+      },
+      "tournament": {
+        "enabled": true,
+        "thirdPlace": true,
+        "advanceTeams": 6,
+        "placementAutoDetect": true
+      },
+      "rankingRule": {
+        "league": [
+          "wins",
+          "goalDifference",
+          "goalsFor",
+          "manual"
+        ]
+      }
+    }
+  ]
+}
