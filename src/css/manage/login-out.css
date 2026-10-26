@@ -1,0 +1,137 @@
+
+.logout {
+   position:fixed;
+   height:4dvh;
+   top: 1dvh;
+   right:1dvw;
+}
+.logout.active {
+   box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.37);
+   transform: scale(1.00);
+}
+.logout-popup {
+   position:fixed;
+   left: 50%;
+   top: 50%;
+   width:min(60dvw, 720px);
+   max-width:calc(100dvw - 32px);
+   height:auto;
+   max-height:calc(100dvh - 32px);
+   margin:0;
+   overflow:auto;
+
+   opacity: 0;
+   transform:translate(-50%, -50%) scale(0);
+   transition:opacity 0.5s ease-in-out,transform 0.5s ease-in-out;
+   z-index:101;
+
+   font-size: 2vw;
+   text-align: center;
+   padding-top:20dvh;
+}
+.logout-popup.visible {
+   opacity: 1;
+   transform:translate(-50%, -50%) scale(1);
+   transition:opacity 0.5s ease-in-out,transform 0.5s ease-in-out;
+}
+.logout-popup button {
+   width:30%;
+   height:15%;
+   font-size:2vw;
+}
+
+/* ログインポップアップ */
+.popup-select-game {
+    position: fixed;
+    width: 90dvw;
+    height: 85dvh;
+    margin: 10dvh 5dvw 5dvh 5dvw;
+    background-color: white;
+    z-index: 100;
+}
+.popup-select-game.success {
+   display: none;
+}
+.popup-select-game p {
+   text-align: center;
+   font-size: 1.5dvw;
+   margin-top: 12dvh;
+}
+.popup-select-game h1 {
+    text-align: center;
+    margin-top: 3dvh;
+}
+.popup-select-game select {
+    position: absolute;
+    left: 20%;
+    width: 60%;
+    height: 15dvh;
+    font-size: 1.5dvw;
+    margin-top: 5dvh;
+    padding: 1dvh 0 1dvh 0;
+    background: oklch(0.99 0.07393 145.034);
+}
+.popup-select-game input {
+   position: absolute;
+   left: 20%;
+   width: 40%;
+   height: 15dvh;
+   margin-top: 25dvh;
+   font-size: 1.5dvw;
+   background: oklch(0.99 0.07 8.704);
+}
+.popup-select-game button {
+   position: absolute;
+   right: 20%;
+   width: 15%;
+   height: 15dvh;
+   margin-top: 25dvh;
+   font-size: 2.5dvw;
+   font-weight: 600;
+   color: white;
+   background: oklch(0.6 0.31003 266.137);
+}
+.system-dashboard-page .logout {
+   top: 13px;
+   right: 5dvw;
+   height: 42px;
+   padding: 0 16px;
+   border-radius: var(--site-radius);
+   color: #fff;
+   font-size: 14px;
+   font-weight: 700;
+   background: rgba(185, 28, 28, 0.92) !important;
+   box-shadow: 0 10px 24px rgba(127, 29, 29, 0.2);
+}
+
+.system-dashboard-page .logout-popup {
+   box-sizing: border-box;
+   width: min(520px, calc(100dvw - 40px));
+   height: auto;
+   margin: 0;
+   padding: 34px 28px 28px;
+   left: 50%;
+   right: auto;
+   color: var(--site-text);
+   font-size: clamp(18px, 2vw, 24px);
+}
+
+@media (max-width: 600px) {
+   .system-dashboard-page .logout-popup {
+      width: calc(100dvw - 24px);
+      padding: 24px 16px 20px;
+   }
+
+   .system-dashboard-page .logout-popup button {
+      width: 100%;
+      margin: 8px 0 0;
+   }
+}
+
+.system-dashboard-page .logout-popup button {
+   width: 42%;
+   min-height: 44px;
+   margin: 12px 4px 0;
+   border-radius: var(--site-radius);
+   font-size: 16px;
+}

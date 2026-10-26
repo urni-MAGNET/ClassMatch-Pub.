@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学級テンプレート | Classmatch MAGNET</title>
+    <meta name="author" content="urni - magnet">
+    <link rel="canonical" href="https://classmatch.kagomag.net">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/img/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/img/icon.png">
+    <link rel="stylesheet" href="/mypage/style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body class="site-page mypage-page mypage-detail-page">
+    <header class="header">
+        <p class="header-title">Mypage / 学級テンプレート作成<small>v1.0.0</small></p>
+        <nav class="mypage-header-nav">
+            <a href="/mypage/create/">システム新規作成</a>
+            <a href="/mypage/score-profile/">大会テンプレート作成</a>
+            <a href="/mypage/account/">アカウント管理</a>
+        </nav>
+    </header>
+
+    <div class="classmatch-background" aria-hidden="true">
+        <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+        </picture>
+    </div>
+
+    <main class="box filter detail-box class-profile-page">
+        <aside class="profile-side-panel filter">
+            <h1 class="title">学級テンプレート作成</h1>
+            <div class="profile-header-fields">
+                <label>テンプレート名
+                    <input id="class-profile-name" class="filter" type="text">
+                </label>
+                <label>バージョン
+                    <input id="class-profile-version" class="filter" type="number" min="1" step="1">
+                </label>
+            </div>
+            <div class="profile-toolbar side-toolbar">
+                <button id="class-profile-add-class" class="filter filterhover" type="button">学級を追加</button>
+                <label class="file-button filter filterhover">JSONを読み込む
+                    <input id="class-profile-import" type="file" accept=".json,application/json">
+                </label>
+                <button id="class-profile-download" class="filter filterhover primary-action" type="button">JSONを保存</button>
+            </div>
+            <details class="profile-json-panel">
+                <summary>JSONを直接編集</summary>
+                <textarea id="class-profile-json" class="filter" rows="16" spellcheck="false"></textarea>
+                <div class="score-profile-actions">
+                    <button id="class-profile-apply-json" class="filter filterhover" type="button">JSONを画面に反映</button>
+                    <button id="class-profile-format" class="filter filterhover" type="button">整形してブラウザに保存</button>
+                </div>
+            </details>
+        </aside>
+
+        <section class="class-profile-editor filter">
+            <div class="class-profile-list-head">
+                <h2>学級一覧</h2>
+                <p class="field-help">新規作成画面で読み込む学級コードと学級名を定義します。</p>
+            </div>
+            <div id="class-profile-classes" class="class-profile-classes"></div>
+        </section>
+    </main>
+
+    <div class="commu-popup radius filter">
+        <div class="popup-title"></div>
+        <div class="popup-content"></div>
+    </div>
+
+    <script type="module">
+        import "/src/js/school/mypage/login.js";
+        import "/src/js/school/mypage/class-profile.js";
+    </script>
+</body>
+
+</html>

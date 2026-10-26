@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アカウント設定 | Classmatch MAGNET</title>
+    <meta name="author" content="urni - magnet">
+    <link rel="canonical" href="https://classmatch.kagomag.net">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/img/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/img/icon.png">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body class="site-page mypage-page mypage-detail-page">
+    <div class="classmatch-loading">
+        <div class="loading-blur"></div>
+        <picture class="loading-background"> 
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+         </picture> 
+        <div class="loading-animation">
+            <img class="loading-red" src="/src/img/icon/red.png" alt="">
+            <img class="loading-blue" src="/src/img/icon/blue.png" alt="">
+            <img class="loading-green" src="/src/img/icon/green.png" alt="">
+        </div>
+        <div class="loading-bar"></div>
+    </div>
+
+   <header class="header site-header login-header">
+        <a href="/" class="site-logo">ClassMatch</a>
+        <nav class="site-nav" aria-label="ページメニュー">
+            <a href="/">トップ</a>
+        </nav>
+    </header>
+
+
+    <div class="classmatch-background" aria-hidden="true">
+        <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+        </picture>
+    </div>
+
+    <main class="box filter detail-box account-page-box">
+        <h1 class="title">アカウント登録</h1>
+        
+        <section class="account-panel filter">
+            <h2>登録内容の編集</h2>
+            <label>アカウント名
+                <input id="account-name-input" class="filter" type="text" maxlength="80" autocomplete="organization">
+            </label>
+            <button id="school-id-register-btn" class="filter filterhover" type="button">登録</button>
+        </section>
+
+    </main>
+
+    <div class="commu-popup radius filter">
+      <div class="popup-title"></div>
+      <div class="popup-content"></div>
+    </div>
+
+    <script type="module">
+        import "/src/js/animation.js";
+        import "/src/js/school/mypage/login.js";
+        import "/src/js/school/google.js";
+    </script>
+</body>
+
+</html>

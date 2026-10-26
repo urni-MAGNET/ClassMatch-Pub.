@@ -1,0 +1,256 @@
+.mypage-page {
+    --mypage-font: var(--site-font);
+    --mypage-text: var(--site-text);
+    --mypage-muted: var(--site-muted);
+    --mypage-accent: var(--site-accent);
+    --mypage-line: rgba(255, 255, 255, 0.72);
+    --mypage-glass: rgba(255, 255, 255, 0.68);
+    --mypage-radius: var(--site-radius);
+    min-height: 100dvh;
+    padding: 100px 5dvw 56px;
+    box-sizing: border-box;
+    color: var(--mypage-text);
+    font-family: var(--mypage-font);
+}
+
+.mypage-page .header {
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    gap: 24px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 68px;
+    padding: 0 5dvw;
+    background: rgba(255, 255, 255, 0.74);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.mypage-page .header .header-title {
+    margin: 0;
+    color: var(--mypage-text);
+    font-family: var(--mypage-font);
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-align: left;
+    transform: none;
+}
+
+.mypage-page .header-title::before {
+    content: "ClassMatch";
+    display: inline-flex;
+    margin-right: 18px;
+    color: var(--mypage-text);
+}
+
+.mypage-page .header-title small {
+    margin-left: 8px;
+    color: var(--mypage-muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.mypage-page header a {
+    display: inline-flex;
+    margin-left: auto;
+}
+
+.mypage-header-nav {
+    display: flex;
+    gap: 14px;
+    margin-left: auto;
+}
+
+.mypage-header-nav a {
+    margin-left: 0;
+    color: var(--mypage-muted);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.mypage-header-nav a:hover {
+    color: var(--mypage-accent);
+    border-color: var(--mypage-accent);
+}
+
+.mypage-page header a img {
+    position: static;
+    width: 42px;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 28px rgba(17, 24, 39, 0.13);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mypage-page header a img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(17, 24, 39, 0.18);
+}
+
+.mypage-page .box {
+    position: static;
+    float: left;
+    width: calc(50% - 18px);
+    height: calc(100dvh - 156px);
+    min-height: 560px;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: 28px;
+}
+
+.mypage-page .edit-existing-system {
+    float: right;
+}
+
+.mypage-page::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.mypage-page .title {
+    margin: 0 0 22px;
+    color: var(--mypage-text);
+    font-family: var(--mypage-font);
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+.mypage-page .label {
+    margin: 24px 0 12px;
+    color: var(--mypage-accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.mypage-page input,
+.mypage-page button,
+.mypage-page .a-button {
+    box-sizing: border-box;
+    border-radius: var(--mypage-radius);
+    font-family: var(--mypage-font);
+}
+
+.mypage-page input {
+    min-height: 42px;
+    border: 1px solid rgba(17, 24, 39, 0.14);
+    color: var(--mypage-text);
+    background: rgba(255, 255, 255, 0.72);
+    font-size: 15px;
+}
+
+.mypage-page input:focus {
+    outline: 2px solid rgba(127, 29, 29, 0.22);
+    border-color: rgba(127, 29, 29, 0.65);
+}
+
+.mypage-page button,
+.mypage-page .a-button {
+    min-height: 42px;
+    padding: 0 16px;
+    border: 0;
+    color: var(--mypage-text);
+    background: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.mypage-page .a-button,
+.mypage-page #register-new-system {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 18px 0 0;
+    color: #fff;
+    background: rgba(37, 99, 235, 0.9);
+    text-decoration: none;
+}
+
+.mypage-page #register-new-system,
+.mypage-page #school-dataedit,
+.mypage-page #password-edit,
+.mypage-page #password-reset-mail,
+.mypage-page .edit-save,
+.mypage-page .system-share,
+.mypage-page .system-password-share-btn,
+.mypage-page .share-systemlink-btn {
+    color: #fff;
+    background: rgba(37, 99, 235, 0.9);
+}
+
+.mypage-page .system-delete-btn,
+.mypage-page .edit-delete,
+.mypage-page .system-delete-confirm,
+.mypage-page #account-delete {
+    color: #fff;
+    background: rgba(185, 28, 28, 0.92);
+}
+
+.mypage-actions {
+    display: grid;
+    gap: 14px;
+}
+
+.mypage-actions .a-button {
+    margin: 0;
+    padding:15px;
+    font-size:20px;
+}
+
+.mypage-detail-page .detail-box {
+    float: none;
+    width: min(1120px, 100%);
+    height: calc(100dvh - 156px);
+    margin: 0 auto;
+}
+
+.mypage-detail-page .system-detail-main {
+    max-width: none;
+}
+
+.mypage-logout {
+    position: fixed;
+    right: 5dvw;
+    bottom: 28px;
+    z-index: 120;
+    color: #fff !important;
+    background: rgba(127, 29, 29, 0.9) !important;
+}
+
+.placeholder-panel,
+.account-suggestion-grid p {
+    margin: 0;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: var(--mypage-radius);
+}
+
+.account-setting-list {
+    display: grid;
+    gap: 10px;
+    max-width: 520px;
+}
+
+.account-page-box {
+    display: grid;
+    align-content: start;
+    gap: 18px;
+}

@@ -1,0 +1,27 @@
+
+.scroll {
+    padding:0;
+    margin: 0;
+}
+.scroll-wrap {
+    position:static;
+    padding: 5dvh 0;
+    font-size:2vw;
+    background-color: black;
+}
+.scroll-wrap .img-fixed {
+    position:relative;
+    left:10%;
+    width:40%;
+    height:40vh;
+
+    background-image: url("../../assets/hero.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.scroll-wrap .text-content {
+    position:absolute;
+    right:10%;
+    color:white;
+}

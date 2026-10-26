@@ -1,0 +1,169 @@
+
+
+.box {
+   position: fixed;
+   width: 40dvw;
+   height: 60dvh;
+   margin: 20dvh 5dvw 20dvh 5dvw;
+}
+.select-term {
+   left: 0;
+}
+.create {
+   right: 0;
+}
+
+/*ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+.create-header {
+   font-family: "Sawarabi Gothic", sans-serif;
+   font-size: 2.5dvw;
+   filter: drop-shadow(0 0 6px rgb(0, 0, 0));
+   color: white;
+   text-align: center;
+   margin-top: 15%;
+}
+.create-header.upward {
+   margin-top: 2%;
+   transition: margin-top 1s ease-in-out;
+}
+#create-initial-button {
+   width: 60%;
+   height: 15%;
+   margin: 10% 20% 0 20%;
+   border: 2px solid gold;
+   font-size: 1.5em;
+   font-family: "Sawarabi Gothic", sans-serif;
+   font-weight: 600;
+   color:black;
+
+   border-radius: 25px;
+}
+#create-initial-button:hover {
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.37);
+   transition: box-shadow 0.2s ease-in-out;
+   transform: scale(1.02);
+}
+#create-initial-button.invisible {
+   display: none;
+}
+
+/*ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+#view-create {
+   display: none;
+   overflow: hidden;       
+   height: 0;            
+   opacity: 0;
+   transition: height 0.6s ease, opacity 0.4s ease;
+   width: 80%;
+   margin: 0 10% 0 10%;
+   overflow-y: auto;
+   overflow-x: hidden;
+   scrollbar-width: thick;
+   scrollbar-color: #ffffff transparent;
+}
+#view-create.show {
+   display: block;
+   opacity: 1;
+   height: 80%;
+   transition: height 1s ease-in-out, opacity 0.4s ease;
+}
+
+#conduct-year {
+   width: 60%;
+   height: 10%;
+   font-size: 1.2dvw;
+   border-radius: 15px;
+}
+#conduct-school-term {
+   width: 30%;
+   height: 10%;
+   font-size: 1.2dvw;
+   border-radius: 15px;
+}
+.league-team {
+   width: 60%;
+   margin: 10px auto;
+   font-size: 1.2dvw;
+   border-radius: 10px;
+   padding: 5px;
+}
+.create-team {
+   width: 15%;
+   font-size: 1.2dvw;
+   background: oklch(0.8 0.3 200);
+   border: 0px;
+   border-radius: 15px;
+}
+.delete-team {
+   width: 5%;
+   aspect-ratio: 1 / 1;
+   font-weight: 900;
+   color: white;
+   background: oklch(0.8 0.3 50);
+   border-radius: 15px;
+   border: 0px;
+   margin-left: 1%;
+}
+.game-type {
+   font-size: 1.5dvw;
+   font-family: "Sawarabi Gothic", sans-serif;
+   font-weight: 600;
+   text-align: center;
+   border-bottom: 1px solid white;
+}
+.create-league {
+   width: 40%;
+   height: 10%;
+   font-size: 1.2dvw;
+   font-weight: 600;
+   margin: 0 30% 0 30%;
+   border-radius: 15px;
+   background: oklch(0.8 0.3 90);
+   color: #ffffff;
+}
+#create-create .league-name {
+   font-size: 1.4dvw;
+}
+
+.create-conduction {
+   width: 100%;
+   height: 15%;
+   margin: 5% 0 5% 0;
+   font-size: 2dvw;
+   font-weight: 900;
+   background: oklch(0.8 0.3 170);
+}
+
+.create-conduction-popup {
+   position: fixed;
+   transform: translate(-50%,-50%);
+   top:60vh;
+   left: 50vw;
+   
+   width:40vw;
+   height:30vh;
+
+   transition: top 1s ease-in-out, opacity 1s ease-in-out;
+   opacity: 0;
+   z-index: -1;
+}
+.create-conduction-popup.send {
+   top:50vh;
+   left: 50vw;
+   transform: translate(-50%,-50%);
+
+   opacity: 1;
+   z-index: 1;
+   transition: top 1.2s ease-in-out, opacity 1.2s ease-in-out;
+}
+
+#create-conduction-popup-content {
+   position:absolute;
+   transform: translate(-50%,0);
+   top: 25%;
+   left: 50%;
+
+   font-size: 2vw;
+}

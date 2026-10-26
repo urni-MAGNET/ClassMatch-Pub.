@@ -1,0 +1,407 @@
+flowchart LR
+  n0["index.html"]
+  n1["login/account.html"]
+  n2["login/index.html"]
+  n3["mail/reset.html"]
+  n4["mypage/account/index.html"]
+  n5["mypage/account/passwordreset.html"]
+  n6["mypage/class-profile/index.html"]
+  n7["mypage/create/index.html"]
+  n8["mypage/edit/basic/index.html"]
+  n9["mypage/edit/documents/index.html"]
+  n10["mypage/edit/index.html"]
+  n11["mypage/index.html"]
+  n12["mypage/score-profile/index.html"]
+  n13["scripts/audit-source.mjs"]
+  n14["scripts/inspect-structure.mjs"]
+  n15["src/js/animation.js"]
+  n16["src/js/classmatch/bracket-state.js"]
+  n17["src/js/classmatch/class-totals.js"]
+  n18["src/js/classmatch/classes.js"]
+  n19["src/js/classmatch/courts.js"]
+  n20["src/js/classmatch/document-diagrams.js"]
+  n21["src/js/classmatch/league-pairs.js"]
+  n22["src/js/classmatch/local-scores.js"]
+  n23["src/js/classmatch/profile.js"]
+  n24["src/js/classmatch/result-reference.js"]
+  n25["src/js/classmatch/scheduled-matches.js"]
+  n26["src/js/classmatch/score-formula.js"]
+  n27["src/js/classmatch/sport-results.js"]
+  n28["src/js/classmatch/timetable-compact.js"]
+  n29["src/js/classmatch/timetable-estimates.js"]
+  n30["src/js/classmatch/timetable-excel.js"]
+  n31["src/js/classmatch/timetable-prompt.js"]
+  n32["src/js/classmatch/timetable-table.js"]
+  n33["src/js/classmatch/timetable-validation.js"]
+  n34["src/js/classmatch/tournament-data.js"]
+  n35["src/js/classmatch/tournament-runtime.js"]
+  n36["src/js/classmatch/tournament-setup.js"]
+  n37["src/js/classmatch/tournament-structure.js"]
+  n38["src/js/classmatch/tournament-svg.js"]
+  n39["src/js/common.js"]
+  n40["src/js/load.js"]
+  n41["src/js/notification-sound.js"]
+  n42["src/js/notification-state.js"]
+  n43["src/js/password-policy.js"]
+  n44["src/js/popup.js"]
+  n45["src/js/school/account.js"]
+  n46["src/js/school/google.js"]
+  n47["src/js/school/login.js"]
+  n48["src/js/school/mypage/account.js"]
+  n49["src/js/school/mypage/bracket-operations.js"]
+  n50["src/js/school/mypage/class-profile.js"]
+  n51["src/js/school/mypage/create-drafts.js"]
+  n52["src/js/school/mypage/create-navigation.js"]
+  n53["src/js/school/mypage/create-structure-data.js"]
+  n54["src/js/school/mypage/create-template-panel.js"]
+  n55["src/js/school/mypage/create-timetable-import.js"]
+  n56["src/js/school/mypage/create-timetable.js"]
+  n57["src/js/school/mypage/create-tournament-phase2.js"]
+  n58["src/js/school/mypage/create.js"]
+  n59["src/js/school/mypage/documents-page.js"]
+  n60["src/js/school/mypage/edit-forms.js"]
+  n61["src/js/school/mypage/edit-navigation.js"]
+  n62["src/js/school/mypage/edit.js"]
+  n63["src/js/school/mypage/formula-editor.js"]
+  n64["src/js/school/mypage/login.js"]
+  n65["src/js/school/mypage/optional-timetable.js"]
+  n66["src/js/school/mypage/reconcile-results.js"]
+  n67["src/js/school/mypage/reset.js"]
+  n68["src/js/school/mypage/score-profile-view.js"]
+  n69["src/js/school/mypage/score-profile.js"]
+  n70["src/js/school/mypage/script.js"]
+  n71["src/js/school/mypage/setup-page.js"]
+  n72["src/js/school/mypage/system.js"]
+  n73["src/js/school/mypage/timetable-form-data.js"]
+  n74["src/js/school/mypage/timetable-render.js"]
+  n75["src/js/school/mypage/tournament-seeds.js"]
+  n76["src/js/school/mypage/tournament-settings.js"]
+  n77["src/js/school/mypage/tournament-store.js"]
+  n78["src/js/school/mypage/visual-league-phase1.js"]
+  n79["src/js/supabase.js"]
+  n80["src/js/system/announce/result.js"]
+  n81["src/js/system/core/result.js"]
+  n82["src/js/system/core/score-view.js"]
+  n83["src/js/system/load.js"]
+  n84["src/js/system/login.js"]
+  n85["src/js/system/manage/sendresult.js"]
+  n86["src/js/system/message.js"]
+  n87["src/js/system/result/report.js"]
+  n88["src/js/system/result/script.js"]
+  n89["src/js/system/session.js"]
+  n90["src/js/version.js"]
+  n91["system/announcements/index.html"]
+  n92["system/core/index.html"]
+  n93["system/index.html"]
+  n94["system/manage/index.html"]
+  n95["system/result/index.html"]
+  n96["system/result/script.js"]
+  n97["test.html"]
+  n98["tests/create-tournament.browser.mjs"]
+  n99["tests/notifications.browser.mjs"]
+  n100["tests/notifications.test.mjs"]
+  n101["tests/timetable-estimates.test.mjs"]
+  n102["tests/timetable-fixture.mjs"]
+  n103["tests/timetable-layout.browser.mjs"]
+  n104["tests/timetable-prompt.test.mjs"]
+  n105["tests/timetable-table.test.mjs"]
+  n106["tests/timetable-validation.test.mjs"]
+  n107["tests/tournament-data.test.mjs"]
+  n108["tests/tournament-followup.test.mjs"]
+  n109["tests/tournament-persistence.test.mjs"]
+  n110["tests/tournament-upgrade.browser.mjs"]
+  n111["tests/tournament-upgrade.test.mjs"]
+  n112["tests/venue-profile.test.mjs"]
+  n113["vite.config.js"]
+  n0 --> n45
+  n0 --> n47
+  n0 --> n40
+  n0 --> n15
+  n1 --> n15
+  n1 --> n64
+  n1 --> n46
+  n2 --> n47
+  n2 --> n15
+  n4 --> n64
+  n4 --> n48
+  n5 --> n67
+  n6 --> n64
+  n6 --> n50
+  n7 --> n64
+  n7 --> n58
+  n7 --> n78
+  n7 --> n52
+  n7 --> n57
+  n7 --> n70
+  n7 --> n54
+  n7 --> n71
+  n7 --> n65
+  n7 --> n15
+  n8 --> n64
+  n8 --> n58
+  n8 --> n78
+  n8 --> n52
+  n8 --> n57
+  n8 --> n70
+  n8 --> n54
+  n8 --> n71
+  n8 --> n65
+  n8 --> n61
+  n8 --> n15
+  n9 --> n64
+  n9 --> n58
+  n9 --> n78
+  n9 --> n52
+  n9 --> n57
+  n9 --> n70
+  n9 --> n54
+  n9 --> n71
+  n9 --> n65
+  n9 --> n61
+  n9 --> n59
+  n9 --> n15
+  n10 --> n64
+  n10 --> n62
+  n10 --> n61
+  n10 --> n49
+  n10 --> n76
+  n10 --> n40
+  n10 --> n15
+  n11 --> n64
+  n11 --> n72
+  n11 --> n40
+  n11 --> n15
+  n12 --> n64
+  n12 --> n69
+  n12 --> n15
+  n17 --> n23
+  n18 --> n39
+  n18 --> n23
+  n20 --> n34
+  n20 --> n21
+  n22 --> n35
+  n22 --> n27
+  n23 --> n39
+  n23 --> n26
+  n23 --> n19
+  n24 --> n35
+  n24 --> n27
+  n25 --> n37
+  n27 --> n23
+  n30 --> n32
+  n31 --> n19
+  n31 --> n28
+  n32 --> n19
+  n33 --> n32
+  n33 --> n31
+  n33 --> n19
+  n33 --> n28
+  n35 --> n36
+  n35 --> n37
+  n35 --> n34
+  n35 --> n16
+  n35 --> n27
+  n35 --> n23
+  n36 --> n39
+  n36 --> n23
+  n37 --> n16
+  n37 --> n21
+  n37 --> n34
+  n37 --> n19
+  n44 --> n41
+  n45 --> n79
+  n45 --> n44
+  n45 --> n43
+  n46 --> n79
+  n46 --> n44
+  n47 --> n79
+  n47 --> n44
+  n48 --> n39
+  n48 --> n79
+  n48 --> n44
+  n48 --> n43
+  n49 --> n39
+  n49 --> n77
+  n49 --> n35
+  n49 --> n16
+  n50 --> n39
+  n50 --> n44
+  n50 --> n18
+  n51 --> n58
+  n51 --> n53
+  n51 --> n56
+  n51 --> n70
+  n51 --> n44
+  n53 --> n37
+  n54 --> n58
+  n54 --> n53
+  n55 --> n39
+  n55 --> n56
+  n55 --> n57
+  n55 --> n33
+  n55 --> n32
+  n55 --> n74
+  n55 --> n30
+  n55 --> n44
+  n56 --> n57
+  n56 --> n31
+  n56 --> n29
+  n56 --> n44
+  n57 --> n75
+  n57 --> n35
+  n57 --> n53
+  n57 --> n34
+  n57 --> n38
+  n57 --> n44
+  n58 --> n39
+  n58 --> n23
+  n58 --> n18
+  n58 --> n44
+  n59 --> n35
+  n59 --> n20
+  n59 --> n39
+  n60 --> n39
+  n62 --> n60
+  n62 --> n39
+  n62 --> n24
+  n62 --> n66
+  n62 --> n79
+  n62 --> n44
+  n63 --> n26
+  n64 --> n79
+  n64 --> n90
+  n65 --> n56
+  n65 --> n55
+  n65 --> n51
+  n66 --> n77
+  n66 --> n35
+  n67 --> n39
+  n67 --> n79
+  n67 --> n44
+  n67 --> n43
+  n68 --> n39
+  n68 --> n23
+  n69 --> n68
+  n69 --> n39
+  n69 --> n63
+  n69 --> n44
+  n69 --> n23
+  n70 --> n44
+  n70 --> n39
+  n71 --> n58
+  n71 --> n53
+  n71 --> n70
+  n71 --> n36
+  n71 --> n77
+  n71 --> n73
+  n71 --> n44
+  n74 --> n39
+  n74 --> n32
+  n75 --> n39
+  n76 --> n17
+  n76 --> n39
+  n76 --> n22
+  n76 --> n77
+  n76 --> n79
+  n76 --> n44
+  n76 --> n23
+  n77 --> n25
+  n77 --> n79
+  n78 --> n21
+  n80 --> n79
+  n80 --> n44
+  n81 --> n82
+  n81 --> n39
+  n81 --> n22
+  n81 --> n79
+  n81 --> n44
+  n82 --> n23
+  n82 --> n39
+  n82 --> n17
+  n83 --> n39
+  n83 --> n44
+  n83 --> n79
+  n83 --> n90
+  n84 --> n39
+  n84 --> n44
+  n84 --> n79
+  n85 --> n39
+  n85 --> n24
+  n85 --> n44
+  n85 --> n79
+  n86 --> n39
+  n86 --> n41
+  n86 --> n42
+  n86 --> n44
+  n86 --> n79
+  n88 --> n39
+  n88 --> n79
+  n88 --> n44
+  n88 --> n41
+  n88 --> n42
+  n89 --> n39
+  n89 --> n44
+  n89 --> n79
+  n89 --> n90
+  n91 --> n89
+  n91 --> n86
+  n91 --> n80
+  n91 --> n15
+  n92 --> n89
+  n92 --> n86
+  n92 --> n81
+  n92 --> n15
+  n93 --> n83
+  n93 --> n84
+  n93 --> n15
+  n94 --> n89
+  n94 --> n86
+  n94 --> n85
+  n94 --> n15
+  n95 --> n96
+  n96 --> n88
+  n96 --> n15
+  n97 --> n45
+  n97 --> n40
+  n97 --> n15
+  n98 --> n23
+  n98 --> n58
+  n99 --> n44
+  n100 --> n43
+  n100 --> n42
+  n100 --> n34
+  n100 --> n21
+  n101 --> n29
+  n103 --> n102
+  n103 --> n32
+  n103 --> n74
+  n103 --> n30
+  n104 --> n37
+  n104 --> n31
+  n105 --> n32
+  n105 --> n30
+  n105 --> n102
+  n106 --> n37
+  n106 --> n33
+  n107 --> n34
+  n107 --> n21
+  n107 --> n37
+  n107 --> n23
+  n108 --> n23
+  n108 --> n27
+  n108 --> n22
+  n108 --> n25
+  n108 --> n32
+  n108 --> n35
+  n108 --> n36
+  n110 --> n58
+  n110 --> n53
+  n111 --> n26
+  n111 --> n23
+  n111 --> n34
+  n111 --> n16
+  n111 --> n36
+  n111 --> n35
+  n112 --> n23
+  n112 --> n37
+  n112 --> n31

@@ -1,0 +1,247 @@
+.tournament-settings {
+    margin-bottom: 20px;
+}
+
+.sport-result-list {
+    display: grid;
+    gap: 10px;
+}
+
+.score-view-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(140px, 180px);
+    align-items: end;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.score-sport-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.score-sport-tab {
+    flex: 0 0 auto;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.score-sport-tab.active {
+    color: #fff;
+    background: rgba(37, 99, 235, 0.9);
+}
+
+.score-sort-control {
+    display: grid;
+    gap: 6px;
+    color: var(--site-muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.score-sort-control select {
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 10px;
+}
+
+.class-total-board {
+    padding: 16px;
+    background: rgba(239, 246, 255, 0.68);
+    border-radius: var(--mypage-radius);
+}
+
+.class-total-board h3 {
+    margin: 0 0 12px;
+}
+
+.class-total-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+}
+
+.class-total-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.74);
+    border-radius: var(--mypage-radius);
+}
+
+.class-total-card strong {
+    color: var(--mypage-accent);
+    font-size: 18px;
+}
+
+.sport-result-item {
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.52);
+    border: 1px solid rgba(17, 24, 39, 0.1);
+    border-radius: var(--mypage-radius);
+}
+
+.sport-result-item summary {
+    display: grid;
+    grid-template-columns: minmax(160px, 1fr) 100px 110px;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 15px;
+    cursor: pointer;
+    list-style-position: inside;
+}
+
+.sport-result-item summary strong,
+.sport-result-item summary span:not(.result-team-name) {
+    text-align: right;
+}
+
+.result-team-name {
+    color: var(--mypage-text);
+    font-weight: 700;
+}
+
+.sport-result-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    align-items: end;
+    gap: 8px;
+    padding: 12px;
+    border-top: 1px solid rgba(17, 24, 39, 0.1);
+}
+
+.result-entry-meta,
+.sport-result-row .result-notes {
+    grid-column: 1 / -1;
+}
+
+.sport-config-details {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: var(--mypage-radius);
+}
+
+.sport-config-details > summary {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.sport-config-details[open] > summary {
+    margin-bottom: 14px;
+}
+
+.effective-result {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    color: var(--mypage-text);
+    font-size: 14px;
+}
+
+.account-suggestion-title {
+    margin: 32px 0 14px;
+    font-size: 20px;
+}
+
+.account-suggestion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.account-popup {
+    position: fixed;
+    top: 84px;
+    right: 5dvw;
+    width: min(320px, calc(100dvw - 40px));
+    min-height: 180px;
+    box-sizing: border-box;
+    padding: 28px 24px 24px;
+    text-align: left;
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(24px);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.account-popup.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.account-popup a {
+    display: inline-flex;
+    margin: 10px 0 14px;
+    color: var(--mypage-muted);
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.account-popup a:hover {
+    color: var(--mypage-accent);
+    border-color: var(--mypage-accent);
+}
+
+.account-popup #logout {
+    width: 100%;
+    color: #fff;
+    background: rgba(185, 28, 28, 0.92);
+}
+
+.account-setting {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: min(360px, 88dvw);
+    height: calc(100dvh - 68px);
+    box-sizing: border-box;
+    padding: 38px 26px 26px;
+    z-index: 200;
+    transform: translateX(-105%);
+    transition: transform 0.28s ease;
+}
+
+.account-setting.visible {
+    transform: translateX(0);
+}
+
+.schoolname {
+    margin: 0 0 16px;
+    color: var(--mypage-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.account-setting button {
+    width: 100%;
+    margin: 8px 0;
+    text-align: left;
+}
+
+.account-setting #account-delete {
+    color: #fff;
+    background: rgba(185, 28, 28, 0.92);
+}
+
+.mypage-page .main-register {
+    position: fixed;
+    inset: 50% auto auto 50%;
+    width: min(640px, calc(100dvw - 40px));
+    min-height: 320px;
+    margin: 0;
+    padding: 32px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: var(--mypage-radius);
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,48 @@
+@import "./formula-editor.css";
+.formula-editor button,.edit-navigation a { border:1px solid #bac8e4; background:white; border-radius:8px; padding:8px 12px; color:#263961; cursor:pointer; }
+.edit-navigation { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+.edit-navigation a { align-self:flex-start; text-decoration:none; }
+.edit-navigation a[aria-current=page] { background:#e9efff; border-color:#5475b9; }
+.tournament-operations { padding:20px; min-width:0; }
+.tournament-operations fieldset { display:flex; flex-wrap:wrap; gap:10px; padding:12px; margin:12px 0; }
+.tournament-operations label { display:grid; gap:6px; }
+.tournament-operations select,.tournament-operations input { font:inherit; padding:7px; border:1px solid #bac8e4; border-radius:6px; background:#fff; }
+.bracket-match button { margin-top:10px; }
+.tournament-third-place-box { position:absolute; box-sizing:border-box; width:260px; padding:14px; border:1px solid #c5a14d; border-radius:8px; background:white; white-space:pre-line; text-align:center; line-height:1.6; }
+.save-status { white-space:pre-line; padding:12px; border-left:4px solid #627eb4; }
+.save-status[data-level=error] { border-color:#bd344b; color:#941c30; }
+.save-status[data-level=warning] { border-color:#c18a12; }
+.bracket-rounds { display:flex; align-items:center; gap:24px; overflow:auto; padding:12px; }
+.bracket-round { min-width:220px; display:grid; gap:20px; }
+.bracket-match { border:1px solid #a7b9d7; border-radius:8px; padding:12px; background:#fff; break-inside:avoid; }
+.bracket-match label { display:block; }
+.bracket-match input { width:65px; }
+.bracket-match select { max-width:210px; }
+.document-sheet { background:white; color:#17223b; padding:24px; margin:20px 0; overflow:auto; }
+.document-sheet table { border-collapse:collapse; width:100%; }
+.document-sheet td,.document-sheet th { border:1px solid #8394ad; padding:8px; }
+@media print {
+ body.print-documents .header,body.print-documents nav,body.print-documents .classmatch-background,body.print-documents .no-print { display:none!important; }
+ body.print-documents main { margin:0!important; padding:0!important; width:100%!important; max-width:none!important; box-shadow:none!important; }
+ .document-sheet { break-before:page; overflow:visible; margin:0; padding:5mm; }
+ .document-sheet:first-child { break-before:auto; }
+ .bracket-rounds { overflow:visible; gap:8px; }
+ .bracket-round { min-width:0; flex:1; }
+}
+.tournament-slot-select{position:absolute;width:180px;font:inherit;background:#fff;border:2px solid #c5a14d;border-radius:6px;padding:8px;}
+.document-sport-diagrams{display:flex;flex-wrap:wrap;align-content:start;gap:12px}
+.document-league{flex:1 1 220px;min-width:0}
+.document-bracket{flex:1 1 100%;min-width:0}
+.document-diagram{display:block;width:100%;max-height:55vh}
+.document-sheet h3{margin:8px 0}
+.document-footer{display:flex;justify-content:flex-end;align-items:center;margin-top:auto;padding-top:8px;font-size:28px;font-weight:900;letter-spacing:3px}
+@media print{
+ body.print-documents .document-sheet{width:277mm;height:190mm;box-sizing:border-box;break-inside:avoid;break-after:page;overflow:hidden}
+ body.print-documents .document-sheet:last-child{break-after:auto}
+ body.print-documents .document-sport-diagrams{height:150mm;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(0,1fr)}
+ body.print-documents .document-bracket{grid-column:1/-1}
+ body.print-documents .document-diagram{height:calc(100% - 10mm);max-height:100%;width:100%}
+ body.print-documents .document-league,body.print-documents .document-bracket{min-height:0}
+ body.print-documents #create-timetable,body.print-documents #create-timetable-import,body.print-documents #register-new-system{display:none!important}
+}
+.tournament-seeds > div { display:flex; flex-wrap:wrap; gap:12px; padding:12px 0; }

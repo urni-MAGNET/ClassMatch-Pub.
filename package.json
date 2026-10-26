@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test:tournament": "node --test tests/tournament-data.test.mjs",
+    "test:tournament:browser": "node tests/create-tournament.browser.mjs",
+    "inspect:structure": "node scripts/inspect-structure.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:upgrade:browser": "node tests/tournament-upgrade.browser.mjs",
+    "test:notifications:browser": "node tests/notifications.browser.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.9",
+    "parse5": "^8.0.1",
+    "playwright": "^1.64.1",
+    "vite": "^8.1.5"
+  }
+}

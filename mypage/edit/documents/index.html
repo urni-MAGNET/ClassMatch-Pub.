@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大会資料作成 | Classmatch MAGNET</title>
+    <meta name="author" content="urni - magnet">
+    <link rel="canonical" href="https://classmatch.kagomag.net">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/img/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/img/icon.png">
+    <link rel="stylesheet" href="/mypage/style.css">
+    <link rel="stylesheet" href="/src/css/mypage/create-visual.css">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+<style>#create-sidebar,.create-menu-toggle,.create-new-system-wrap,.draft-toolbar,#create-draft-status{display:none!important} .create-system-page{margin-left:auto!important} </style></head>
+
+<body class="site-page mypage-page mypage-detail-page create-layout">
+    <header class="header">
+        <p class="header-title">Mypage / 大会資料作成<small>v1.0.0</small></p>
+        <nav class="mypage-header-nav">
+            <a href="/mypage/score-profile/">大会テンプレート作成</a>
+            <a href="/mypage/class-profile/">学級テンプレート作成</a>
+            <a href="/mypage/account/">アカウント管理</a>
+        </nav>
+        <button class="create-menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="create-sidebar"><span></span><span></span><span></span></button>
+    </header>
+
+    <div class="classmatch-background" aria-hidden="true">
+        <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+        </picture>
+    </div>
+
+    <div class="create-menu-backdrop" hidden></div>
+    <nav id="create-sidebar" class="create-sidebar" aria-label="作成項目">
+        <a href="#create-semester"><strong>実施年度・学期</strong><small>システムの名前をつけます。</small></a>
+        <a href="#create-sport-template"><strong>大会テンプレート</strong><small>競技設定を読み込みます。</small></a>
+        <a href="#create-class-template"><strong>学級テンプレート</strong><small>学級設定を読み込みます。</small></a>
+        <a href="#create-classes"><strong>学級マスター</strong><small>学級設定を修正します。</small></a>
+        <a href="#create-tournament"><strong>大会データ</strong><small>リーグ・トーナメント登録をします。</small></a>
+        <a href="#create-branches"><strong>運営支部</strong><small>運営支部を追加します。</small></a>
+        <a href="#create-timetable"><strong>タイムテーブル</strong></a>
+    </nav>
+    <main class="box filter detail-box create-system-page">
+        <h1 class="title">システム新規作成</h1>
+        <div class="create-new-system-wrap">
+            <label class="form-label" id="create-semester">実施年度・学期
+                <input type="text" name="semester-name" placeholder="例: 2026年度 1学期" class="conduct-semester filter" id="conduct-semester">
+            </label>
+
+            <div class="draft-toolbar">
+                <label>保存済みの実施年度・学期<select id="create-draft-select" class="filter radius"><option value="">選択してください</option></select></label>
+                <button id="save-create-draft" class="filter filterhover radius" type="button">全セクションを一時保存</button>
+                <button id="load-create-draft" class="filter filterhover radius" type="button">一括読み込み</button>
+                <p id="create-draft-status" role="status" aria-live="polite"></p>
+            </div>
+
+            <section class="template-import-panel filter" id="create-sport-template">
+                <div>
+                    <h2>1. 大会テンプレート</h2>
+                    <p>競技はテンプレートJSONから読み込みます。参加チームや結果はJSONには含まれません。</p>
+                </div>
+                <div class="profile-toolbar">
+                    <label class="file-button filter filterhover">テンプレートJSONを選択
+                        <input id="create-profile-import" type="file" accept=".json,application/json">
+                    </label>
+                    <button id="use-saved-profile" class="filter filterhover" type="button">ブラウザ保存済みを使う</button>
+                    <button id="open-score-profile" class="filter filterhover radius" type="button">大会テンプレートを作成</button>
+                </div>
+                <p id="imported-profile-summary" class="imported-profile-summary">テンプレートを読み込んでください。</p>
+            </section>
+
+            <section class="template-import-panel filter" id="create-class-template">
+                <div>
+                    <h2>2. 学級テンプレート</h2>
+                    <p>学級コードと学級名をJSONから読み込みます。読み込むと下の学級マスターへ反映されます。</p>
+                </div>
+                <div class="profile-toolbar">
+                    <label class="file-button filter filterhover">学級テンプレートJSONを選択
+                        <input id="create-class-profile-import" type="file" accept=".json,application/json">
+                    </label>
+                    <button id="use-saved-class-profile" class="filter filterhover" type="button">ブラウザ保存済みを使う</button>
+                    <button id="open-class-profile" class="filter filterhover radius" type="button">学級テンプレートを作成</button>
+                </div>
+                <p id="imported-class-profile-summary" class="imported-profile-summary">必要に応じて学級テンプレートを読み込んでください。</p>
+            </section>
+
+            <section id="create-classes">
+                <h2>3. 学級マスター</h2>
+                <p class="field-help">同じ学級から複数チームが出る場合も、ここで作った同じ学級IDへ紐づけます。</p>
+                <div id="class-master-list" class="class-master-list"></div>
+                <button id="add-class-master" class="filter filterhover" type="button">学級を追加</button>
+            </section>
+
+            <section id="create-tournament">
+                <h2>4. 競技ごとの大会データ</h2>
+                <p class="field-help">テンプレートの設定を元に、今回の大会で使うグループと参加チームを追加します。</p>
+                <div class="create-sport-toolbar"><label for="create-sport-select">競技</label><select id="create-sport-select" class="league-select"><option value="">テンプレートを読み込んでください</option></select></div>
+                <div id="sports-root" class="sports-root tournament-sports-root"></div>
+                <div class="tournament-export-toolbar"><button id="export-tournament-json" type="button">大会構造JSONを保存</button></div>
+            </section>
+
+            <section id="create-branches">
+                <h2>5. 運営支部</h2>
+                <button class="register-sport-branch filter filterhover" id="register-sport-branch" type="button">競技ごとの支部を一括作成</button>
+                <button class="register-sport-branch filter filterhover" id="register-gender-branch" type="button">男子女子をまとめた支部を一括作成</button>
+                <div class="branch-manual-row">
+                    <input type="text" name="branch-name" placeholder="支部を追加" class="add-branch filter radius">
+                    <button class="add-branch-btn filter filterhover" type="button">支部作成</button>
+                </div>
+                <div class="alr-register-branch" id="sport-branch"></div>
+            </section>
+        </div>
+
+        <section id="create-timetable">
+            <h2>6. タイムテーブル</h2>
+            <div id="timetable-sports"></div>
+            <div id="timetable-days"></div>
+            <button id="add-timetable-day" type="button">開催日を追加</button>
+            <label class="form-label">任意の指示<textarea id="timetable-instructions" rows="4"></textarea></label>
+            <div class="tournament-export-toolbar">
+                <button id="generate-timetable-prompt" class="filter filterhover radius" type="button">プロンプト生成</button>
+                <button id="copy-timetable-prompt" class="filter filterhover radius" type="button">プロンプトをコピー</button>
+                <button id="download-timetable-prompt" class="filter filterhover radius" type="button">プロンプトをTXT保存</button>
+            </div>
+            <p id="timetable-status" role="status" aria-live="polite"></p>
+            <textarea id="timetable-prompt" rows="14" readonly aria-label="AIタイムテーブル生成用プロンプト"></textarea>
+        </section>
+        <section id="create-timetable-import">
+            <h2>7. タイムテーブル確認</h2>
+            <label class="form-label" for="timetable-json-input">AIから返されたJSON</label>
+            <textarea id="timetable-json-input" rows="10" spellcheck="false"></textarea>
+            <label class="timetable-file-label file-button filter filterhover radius">JSONファイルから読み込む<input id="timetable-json-file" type="file" accept=".json,application/json,text/json"></label>
+            <button id="validate-timetable-json" class="filter filterhover radius" type="button">読み込み・検証</button>
+            <p id="timetable-import-status" role="status" aria-live="polite"></p>
+            <div id="timetable-global-issues"></div>
+            <label id="timetable-proposal-label" hidden>案<select id="timetable-proposal-select" class="filter radius"></select></label>
+            <div id="timetable-validation-results"></div>
+            <div id="timetable-preview" class="timetable-table-scroll"></div>
+        </section>
+        <button id="register-new-system" class="filter filterhover primary-action" type="button">この内容で新規作成</button>
+    </main>
+
+    <dialog id="template-editor-panel" class="template-editor-panel" aria-labelledby="template-editor-title">
+        <div class="template-editor-heading"><h2 id="template-editor-title"></h2><button id="close-template-editor" type="button" aria-label="閉じる" title="閉じる">×</button></div>
+        <iframe id="template-editor-frame" title="テンプレート編集"></iframe>
+        <div class="template-editor-actions"><button id="apply-template-editor" type="button">作成内容を反映</button><p id="template-editor-status" role="status"></p></div>
+    </dialog>
+    <div class="commu-popup radius filter">
+      <div class="popup-title"></div>
+      <div class="popup-content"></div>
+    </div>
+
+    <script type="module">
+        import "/src/js/school/mypage/login.js";
+        import "/src/js/school/mypage/create.js";
+        import "/src/js/school/mypage/visual-league-phase1.js";
+        import "/src/js/school/mypage/create-navigation.js";
+        import "/src/js/school/mypage/create-tournament-phase2.js";
+        import "/src/js/school/mypage/script.js";
+        import "/src/js/school/mypage/create-template-panel.js";
+        import "/src/js/school/mypage/setup-page.js";
+        import("/src/js/school/mypage/optional-timetable.js").catch(error => {
+          document.getElementById("timetable-status").textContent = "タイムテーブル機能を読み込めませんでした。大会の基本設定・運営は利用できます。";
+          console.warn(error);
+        });
+        import "/src/js/school/mypage/edit-navigation.js";
+        import "/src/js/school/mypage/documents-page.js";
+        import "/src/js/animation.js";
+    </script>
+</body>
+
+</html>

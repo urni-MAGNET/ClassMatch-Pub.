@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>競技テンプレート | Classmatch MAGNET</title>
+    <meta name="author" content="urni - magnet">
+    <link rel="canonical" href="https://classmatch.kagomag.net">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/img/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/img/icon.png">
+    <link rel="stylesheet" href="/mypage/style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body class="site-page mypage-page mypage-detail-page">
+    <header class="header">
+        <p class="header-title">Mypage / 大会テンプレート作成<small>v1.0.0</small></p>
+        <nav class="mypage-header-nav">
+            <a href="/mypage/create/">システム新規作成</a>
+            <a href="/mypage/account/">アカウント管理</a>
+        </nav>
+    </header>
+
+    <div class="classmatch-background" aria-hidden="true">
+        <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+        </picture>
+    </div>
+
+    <main class="box filter detail-box score-profile-page">
+        <aside class="profile-side-panel filter">
+            <h1 class="title">大会の設計図を作る</h1>
+            <p class="profile-lead">競技形式、順位決定、総合得点を定義します。参加チームや試合結果はテンプレートには保存されません。</p>
+            <div class="profile-header-fields">
+                <label>テンプレート名
+                    <input id="score-profile-name" class="filter" type="text">
+                </label>
+                <label>バージョン
+                    <input id="score-profile-version" class="filter" type="number" min="1" step="1">
+                </label>
+            </div>
+
+            <div class="profile-toolbar">
+                <button id="score-profile-add-sport" class="filter filterhover" type="button">競技を追加</button>
+                <label class="file-button filter filterhover">JSONを読み込む
+                    <input id="score-profile-import" type="file" accept=".json,application/json">
+                </label>
+                <button id="score-profile-download" class="filter filterhover primary-action" type="button">JSONを保存</button>
+            </div>
+            <details class="profile-json-panel">
+                <summary>JSONを直接編集</summary>
+                <textarea id="score-profile-json" class="filter" rows="18" spellcheck="false"></textarea>
+                <div class="score-profile-actions">
+                    <button id="score-profile-apply-json" class="filter filterhover" type="button">JSONを画面に反映</button>
+                    <button id="score-profile-format" class="filter filterhover" type="button">整形してブラウザに保存</button>
+                </div>
+            </details>
+        </aside>
+
+        <section class="score-profile-editor filter">
+            <div id="score-profile-sport-tabs" class="profile-sport-tabs" aria-label="競技一覧"></div>
+            <div id="score-profile-sports" class="profile-sports"></div>
+        </section>
+    </main>
+
+    <div class="commu-popup radius filter">
+      <div class="popup-title"></div>
+      <div class="popup-content"></div>
+    </div>
+
+    <script type="module">
+        import "/src/js/school/mypage/login.js";
+        import "/src/js/school/mypage/score-profile.js";
+        import "/src/js/animation.js";
+    </script>
+</body>
+
+</html>

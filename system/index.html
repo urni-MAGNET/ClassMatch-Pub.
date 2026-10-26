@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="jp">
+    <head>
+        <meta charset="utf-8">
+        <title>支部ログイン | Classmatch MAGNET</title>
+        <meta name="author" content="urni - magnet">
+        <link rel="canonical" href="https://classmatch.kagomag.net">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="author" content="＠ 米倉優和">
+        <link rel="canonical" href="https://classmatch.kagomag.net">
+        <link rel="apple-touch-icon" sizes="180x180" href="/src/img/icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/src/img/icon.png">
+        <link rel="stylesheet" href="./style.css">
+        <meta name="google-site-verification" content="e1UuobzFF9_BlNGXJIVBrNezcE0ZH_AdN_AjTZc3_c8" />
+        <meta name="robots" content="noindex, nofollow">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+    </head>
+<body class="site-page system-page">
+        <div class="classmatch-background" aria-hidden="true">
+            <picture>
+                <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+                <img src="/src/img/classmatch-background.svg" alt="">
+            </picture>
+        </div>
+        <div class="header filter site-header system-header">
+            <p class="header-title">高等学校クラスマッチシステム<small>v1.0.0</small></p>
+        </div>
+
+                <div class="popup-select-game filter radius form-panel system-login-panel">
+            <p id="conduct-semester">実施学期</p>
+            <h1>所属する支部を選択してください</h1>
+            <select id="game-branch" class="filter radius form-input" required>
+                <option value="" disabled selected>競技支部を選択</option>
+            </select>
+            <input type="number" maxlength="4" id="passcode" class="filter radius form-input" placeholder="パスワードを入力してください" required>
+            <button id="send-login-btn" class="filter radius site-primary form-submit" >次へ</button>
+        </div>
+        
+            <div class="commu-popup radius filter">
+        <div class="popup-title"></div>
+        <div class="popup-content"></div>
+            </div>
+
+        <script type="module">
+            import "/src/js/system/load.js";
+            import "/src/js/system/login.js";
+            import "/src/js/animation.js";
+        </script>
+</body>
+</html>

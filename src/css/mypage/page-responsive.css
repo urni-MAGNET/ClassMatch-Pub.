@@ -1,0 +1,63 @@
+@media (max-width: 900px) {
+    .mypage-page {
+        padding: 92px 20px 36px;
+    }
+
+    .mypage-page .header {
+        height: auto;
+        min-height: 64px;
+        padding: 12px 20px;
+    }
+
+    .mypage-page .box,
+    .mypage-page .edit-existing-system {
+        float: none;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin-bottom: 18px;
+        padding: 22px;
+    }
+
+    .mypage-detail-page .detail-box {
+        width: 100%;
+        height: auto;
+    }
+
+    .mypage-header-nav {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .profile-header-fields,
+    .profile-grid.two,
+    .profile-grid.three,
+    .profile-setting-grid,
+    .sport-result-row,
+    .score-profile-page,
+    .class-profile-page,
+    .class-profile-row {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-side-panel {
+        position: static;
+        max-height: none;
+    }
+
+    .sport-result-row .result-notes {
+        grid-column: auto;
+    }
+
+    .score-view-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .sport-result-item summary {
+        grid-template-columns: 1fr auto;
+    }
+
+    .sport-result-item summary strong {
+        grid-column: 1 / -1;
+    }
+}

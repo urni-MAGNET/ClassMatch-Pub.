@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>詳細 | Classmatch MAGNET</title>
+    <meta name="author" content="urni - magnet">
+    <link rel="canonical" href="https://classmatch.kagomag.net">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/img/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/img/icon.png">
+    <link rel="stylesheet" href="/mypage/style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body class="site-page mypage-page mypage-detail-page">
+        <div class="classmatch-loading">
+        <div class="loading-blur"></div>
+        <picture class="loading-background"> 
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+         </picture> 
+        <div class="loading-animation">
+            <img class="loading-red" src="/src/img/icon/red.png" alt="">
+            <img class="loading-blue" src="/src/img/icon/blue.png" alt="">
+            <img class="loading-green" src="/src/img/icon/green.png" alt="">
+        </div>
+        <div class="loading-bar"></div>
+    </div>
+    <header class="header">
+        <p class="header-title">Mypage / システム詳細<small>v1.0.0</small></p>
+        <nav class="mypage-header-nav">
+            <a href="/mypage/account/">アカウント管理</a>
+        </nav>
+    </header>
+
+    <div class="classmatch-background" aria-hidden="true">
+        <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+        </picture>
+    </div>
+
+    <main class="system-detail-layout">
+        <aside class="system-detail-sidebar filter">
+            <h1 class="title">システム詳細</h1>
+            <p class="label" id="edit-status">読み込み中</p>
+            <section>
+                <h2>パスワード一覧</h2>
+                <div id="password-list">読み込み中</div>
+            </section>
+            <section>
+                <h2>リンク共有</h2>
+                <button id="share-system-link" class="filter filterhover" type="button">ログインリンクをコピー</button>
+                <button id="share-result-auto-link" class="filter filterhover" type="button">試合結果（自動版）をコピー</button>
+                <button id="share-result-manual-link" class="filter filterhover" type="button">試合結果（手動版）をコピー</button>
+            </section>
+            <section>
+                <h2>結果ページ QR</h2>
+                <canvas id="result-qr" width="180" height="180"></canvas>
+                <button id="download-result-qr" class="filter filterhover" type="button">QRを保存</button>
+            </section>
+            <button id="export-matches-csv" class="filter filterhover" type="button">試合結果をCSV出力</button>
+            <button id="delete-semester" class="filter filterhover" type="button">このシステムを削除</button>
+        </aside>
+
+        <section class="box filter detail-box edit-page-box system-detail-main">
+            <h1 class="title">システム編集</h1>
+            <section id="tournament-settings" class="tournament-settings filter">
+                <div class="edit-table-heading">
+                    <div>
+                        <h2>競技設定・順位・総合得点</h2>
+                        <p class="field-help">順位決定と総合得点計算は別工程です。手動順位・手動得点は自動値より優先されます。</p>
+                    </div>
+                    <div class="profile-toolbar">
+                        <button id="export-sport-results" class="filter filterhover" type="button">競技別CSV</button>
+                        <button id="export-class-totals" class="filter filterhover" type="button">学級別総合得点CSV</button>
+                        <button id="export-tournament-profile" class="filter filterhover" type="button">現在の設定をテンプレート保存</button>
+                    </div>
+                </div>
+                <div id="tournament-settings-root">読み込み中</div>
+            </section>
+            <div id="edit-root" class="edit-root"></div>
+        </section>
+    </main>
+
+    <div class="commu-popup radius filter">
+      <div class="popup-title"></div>
+      <div class="popup-content"></div>
+    </div>
+
+    <script type="module">
+        import "/src/js/school/mypage/login.js";
+        import "/src/js/school/mypage/edit.js";
+        import "/src/js/school/mypage/edit-navigation.js";
+        import "/src/js/school/mypage/bracket-operations.js";
+        import "/src/js/school/mypage/tournament-settings.js";
+        import "/src/js/load.js";
+        import "/src/js/animation.js";
+    </script>
+</body>
+
+</html>

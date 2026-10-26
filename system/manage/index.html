@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>競技支部 | Classmatch MAGNET</title>
+    <meta name="author" content="urni - magnet">
+    <link rel="canonical" href="https://classmatch.kagomag.net">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/img/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/img/icon.png">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body class="site-page system-page system-dashboard-page">
+    <div class="classmatch-background" aria-hidden="true">
+        <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+        </picture>
+    </div>
+
+    <div class="header filter site-header system-header">
+        <p class="header-title">ClassMatch<small>v1.0.0</small></p>
+        <button class="logout filter" onclick="document.querySelector('.logout-popup').classList.add('visible')">ログアウト</button>
+    </div>
+
+    <div class="logout-popup filter radius">
+        <p>本当にログアウトしますか？</p>
+        <button class="loguout-btn filter" id="logout">はい</button>
+        <button class="no-logout-btn filter" onclick="document.querySelector('.logout-popup').classList.remove('visible')">いいえ</button>
+    </div>
+
+    <section class="box result-wrapper filter radius">
+        <h1>試合結果登録</h1>
+        <select class="result-content game-type radius filter" id="game-type" required>
+            <option value="" disabled selected>試合種別を選択</option>
+            <option value="予選">予選</option>
+            <option value="準々決勝">準々決勝</option>
+            <option value="決勝">決勝</option>
+            <option value="準決勝">準決勝</option>
+            <option value="3位決定戦">3位決定戦</option>
+            <option value="順位決定戦">順位決定戦</option>
+            <option value="決勝トーナメント">決勝トーナメント</option>
+        </select>
+        <select class="result-content game-gender radius filter" id="game-gender" required>
+            <option value="" disabled selected>性別</option>
+            <option value="男子">男子</option>
+            <option value="女子">女子</option>
+        </select>
+        <select class="result-content game-team radius filter" id="team1" required>
+            <option value="" disabled selected>チーム1</option>
+        </select>
+        <input class="result-content game-team-point radius filter" id="team1point" type="number" placeholder="点数">
+        <select class="result-content game-team radius filter" id="team2" required>
+            <option value="" disabled selected>チーム2</option>
+        </select>
+        <input class="result-content game-team-point radius filter" id="team2point" type="number" placeholder="点数">
+        <button class="result-content result-send-btn radius filter" id="sendGameResult">送信</button>
+    </section>
+
+    <section class="box latest-results-wrapper filter radius">
+        <h1>最新の試合結果</h1>
+        <div id="latest-results-list">読み込み中...</div>
+    </section>
+
+    <section class="box communication-wrapper filter radius">
+        <h1>業務連絡一覧</h1>
+        <div id="commu-list">読み込み中...</div>
+        <select class="commu-to commu-content radius filter" id="commu-to">
+            <option value="" disabled selected>連絡する相手</option>
+        </select>
+        <select class="commu-type commu-content radius filter" id="commu-type">
+            <option value="" disabled selected>種別</option>
+            <option value="業務連絡">業務連絡</option>
+            <option value="試合結果修正依頼">試合結果修正依頼</option>
+            <option value="運営関連の質問">運営関連の質問</option>
+            <option value="場内放送要請">場内放送要請</option>
+        </select>
+        <button class="commu-content broadcast-toggle radius filter filterhover" id="broadcast-toggle" type="button" aria-pressed="false">ブロードキャスト</button>
+        <p class="broadcast-note" id="broadcast-note">生徒に向けて連絡</p>
+        <textarea class="commu commu-content radius filter" id="commu-content" placeholder="メッセージ"></textarea>
+        <button class="commu-content commu-send-btn radius filter filterhover" id="sendmessage">送信</button>
+    </section>
+
+    <section class="branch-status-wrapper filter">
+        <table id="online-display">
+            <tr><td>読み込み中...</td></tr>
+        </table>
+    </section>
+
+    <div class="commu-popup radius filter">
+        <div class="popup-title"></div>
+        <div class="popup-content"></div>
+    </div>
+
+    <script type="module">
+        import "../../src/js/system/session.js";
+        import "../../src/js/system/message.js";
+        import "../../src/js/system/manage/sendresult.js";
+        import "/src/js/animation.js";
+    </script>
+</body>
+
+</html>

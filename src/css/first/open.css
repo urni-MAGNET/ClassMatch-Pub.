@@ -1,0 +1,100 @@
+.select-term-header {
+   font-family: "Sawarabi Gothic", sans-serif;
+   font-size: 2.5dvw;
+   filter: drop-shadow(0 0 6px rgb(0, 0, 0));
+   color: white;
+   text-align: center;
+   margin-top: 15%;
+}
+.select-term-header:hover {
+   transform: scale(1.02);
+   filter: drop-shadow(0 0 12px gold);
+   transition: filter 0.2s ease-in-out;
+}
+.select-term-wrapper {
+   width: 80%;
+   margin: 0 10% 0 10%;
+   height: 20%;
+}
+.select-term-wrapper select {
+   margin: 5% 5% 10% 10%;
+   width: 55%;
+   height: 30%;
+   border: 2px solid black;
+   border-radius: 10px;
+   font-size: 1.25em;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.37);
+}
+.select-term-wrapper select:hover {
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.37);
+   transition: box-shadow 0.2s ease-in-out;
+   transform: scale(1.02);
+}
+.select-term-wrapper option {
+   font-size: 1.25em;
+}
+
+.select-term-wrapper button {
+   width: 20%;
+   height: 30%;
+   margin-right: 0;
+   border-radius: 10px;
+   border: 2px solid gold;
+   font-weight: 600;
+   font-family: "Sawarabi Gothic", sans-serif;
+   color:black;
+
+   font-size: 1.25em;
+}
+.select-term-wrapper button:hover {
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.37);
+   transition: box-shadow 0.2s ease-in-out;
+   transform: scale(1.02);
+}
+
+.open-site-wrapper {
+   border-top: 2px solid white;
+   width: 80%;
+   margin: 0 10% 0 10%;
+}
+.view-site-header {
+   font-family: "Sawarabi Gothic", sans-serif;
+   font-size: 1.5dvw;
+   filter: drop-shadow(0 0 6px rgb(255, 255, 255));
+   color: rgb(0, 0, 0);
+   text-align: center;
+   margin-top: 5%;
+}
+.announce-site-header {
+   font-family: "Sawarabi Gothic", sans-serif;
+   font-size: 1.5dvw;
+   filter: drop-shadow(0 0 6px rgb(255, 255, 255));
+   color: rgb(0, 0, 0);
+   text-align: center;
+   margin-top: 5%;
+}
+.open-site-wrapper select {
+   margin: 0 5% 0 10%;
+   width: 55%;
+   height: 4dvh;
+   border: 2px solid black;
+   border-radius: 10px;
+   font-size: 1.25em;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.37);
+}
+.open-site-wrapper button {
+   width: 20%;
+   height: 4dvh;
+   margin-right: 0;
+   border-radius: 10px;
+   border: 2px solid gold;
+   font-weight: 600;
+   font-family: "Sawarabi Gothic", sans-serif;
+   font-size: 1.25em;
+   color:black;
+}
+.open-site-wrapper button:hover {
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.37);
+   transition: box-shadow 0.2s ease-in-out;
+   transform: scale(1.02);
+}

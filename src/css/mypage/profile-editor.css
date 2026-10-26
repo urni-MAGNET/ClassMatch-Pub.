@@ -1,0 +1,282 @@
+.score-profile-page,
+.class-profile-page {
+    display: grid;
+    grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+    align-items: start;
+    gap: 18px;
+}
+
+.account-panel,
+.score-profile-editor,
+.class-profile-editor {
+    display: grid;
+    gap: 14px;
+    padding: 18px;
+}
+
+.profile-side-panel {
+    position: sticky;
+    top: 0;
+    display: grid;
+    gap: 14px;
+    max-height: calc(100dvh - 192px);
+    overflow-y: auto;
+    padding: 18px;
+}
+
+.profile-side-panel .title {
+    margin-bottom: 4px;
+    font-size: 22px;
+}
+
+.profile-side-panel .profile-header-fields {
+    grid-template-columns: 1fr;
+}
+
+.side-toolbar {
+    display: grid;
+}
+
+.side-toolbar button,
+.side-toolbar .file-button {
+    width: 100%;
+}
+
+.account-panel h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.account-panel label,
+.score-profile-editor label,
+.class-profile-editor label,
+.profile-side-panel label {
+    display: grid;
+    gap: 7px;
+    color: var(--site-muted);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.account-panel input,
+.score-profile-editor input,
+.score-profile-editor textarea,
+.class-profile-editor input,
+.profile-side-panel input,
+.profile-side-panel textarea {
+    width: 100%;
+    padding: 11px 12px;
+}
+
+.account-panel button,
+.score-profile-actions button {
+    width: fit-content;
+}
+
+.account-panel.danger {
+    border-color: rgba(127, 29, 29, 0.32);
+}
+
+.account-panel.danger button {
+    color: #fff;
+    background: rgba(127, 29, 29, 0.9);
+}
+
+.score-profile-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.profile-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 16px;
+    color: var(--mypage-text) !important;
+    font-size: 14px !important;
+    cursor: pointer;
+}
+
+.file-button input {
+    display: none;
+}
+
+.primary-action {
+    color: #fff !important;
+    background: rgba(37, 99, 235, 0.9) !important;
+}
+
+.profile-header-fields,
+.profile-grid,
+.profile-setting-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.profile-header-fields {
+    grid-template-columns: minmax(220px, 1fr) 140px;
+}
+
+.profile-grid.two,
+.profile-setting-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.profile-grid.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.profile-sports {
+    display: grid;
+    gap: 18px;
+}
+
+.profile-sport-tabs {
+    display: flex;
+    gap: 8px;
+    min-height: 46px;
+    overflow-x: auto;
+    padding: 0 0 8px;
+}
+
+.profile-sport-tab {
+    flex: 0 0 auto;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.profile-sport-tab.active {
+    color: #fff;
+    background: rgba(37, 99, 235, 0.9);
+}
+
+.profile-sport-card,
+.tournament-setting-card,
+.tournament-settings {
+    display: grid;
+    gap: 16px;
+    padding: 18px;
+}
+
+.profile-sport-card fieldset,
+.tournament-setting-card fieldset {
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+    margin: 0;
+    padding: 14px;
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    border-radius: var(--mypage-radius);
+}
+
+.profile-sport-card legend,
+.tournament-setting-card legend {
+    padding: 0 6px;
+    color: var(--mypage-accent);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.profile-sport-card label,
+.tournament-setting-card label,
+.sport-result-row label {
+    display: grid;
+    gap: 6px;
+    color: var(--site-muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.profile-sport-card input,
+.profile-sport-card select,
+.profile-sport-card textarea,
+.tournament-setting-card input,
+.tournament-setting-card select,
+.tournament-setting-card textarea {
+    width: 100%;
+    min-height: 40px;
+    box-sizing: border-box;
+    padding: 8px 10px;
+}
+
+.inline-check {
+    display: inline-flex !important;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    width: fit-content;
+}
+
+.inline-check input {
+    width: 18px !important;
+    min-height: 18px !important;
+}
+
+.ranking-checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.compact-row {
+    display: grid;
+    grid-template-columns: minmax(100px, 160px) minmax(120px, 1fr) auto;
+    align-items: end;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.class-profile-editor {
+    display: grid;
+    gap: 14px;
+    padding: 18px;
+}
+
+.class-profile-list-head h2,
+.class-profile-list-head p {
+    margin: 0;
+}
+
+.class-profile-list-head {
+    display: grid;
+    gap: 6px;
+}
+
+.class-profile-classes {
+    display: grid;
+    gap: 10px;
+}
+
+.class-profile-row {
+    grid-template-columns: minmax(120px, 180px) minmax(180px, 1fr) auto;
+}
+
+.profile-json-panel {
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.42);
+    border-radius: var(--mypage-radius);
+}
+
+.profile-json-panel summary {
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.profile-json-panel textarea,
+.score-rule-json {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイページ | Classmatch MAGNET</title>
+    <meta name="author" content="urni - magnet">
+    <link rel="canonical" href="https://classmatch.kagomag.net">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/img/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/img/icon.png">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body class="site-page mypage-page">
+    <div class="classmatch-loading">
+        <div class="loading-blur"></div>
+        <picture class="loading-background"> 
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+         </picture> 
+        <div class="loading-animation">
+            <img class="loading-red" src="/src/img/icon/red.png" alt="">
+            <img class="loading-blue" src="/src/img/icon/blue.png" alt="">
+            <img class="loading-green" src="/src/img/icon/green.png" alt="">
+        </div>
+        <div class="loading-bar"></div>
+    </div>
+
+    <header class="header">
+        <p class="header-title">Mypage<small>ベータ版</small></p>
+        <a href="/mypage/account/" aria-label="アカウント管理">
+            <img src="/src/img/9736.png" alt="アカウント管理">
+        </a>
+    </header>
+
+    <div class="classmatch-background" aria-hidden="true">
+        <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+        </picture>
+    </div>
+
+     <section class="create-new-system box filter">
+        <h1 class="create-new-system-title title">システムを作成</h1>
+        <div class="create-new-system-wrap mypage-actions">
+            <a href="/mypage/score-profile/" class="a-button filter filterhover">
+                <span class="create-new-system-title">大会テンプレート作成</span>
+                <span class="create-new-system-description">実施する競技の追加や設定、得点の設定のテンプレートを設定します。</span>
+            </a>
+            <a href="/mypage/class-profile/" class="a-button filter filterhover">
+                <span class="create-new-system-title">チームテンプレート作成</span>
+                <span class="create-new-system-description">競技に出場するチーム・学級のテンプレートを作成します。</span>
+            </a>
+            <a href="/mypage/create/" class="a-button filter filterhover">
+                <span class="create-new-system-title">システム新規作成</span>
+                <span class="create-new-system-description">実際に支部を作成し運営を行うシステムを作成します。</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="edit-existing-system box filter">
+        <p class="edit-existing-system-title title">既存システム</p>
+        <div class="edit-existing-system-wrap" id="existing-system">
+            <div class="existing-system filter">読み込み中</div>
+        </div>
+    </section>
+    <script type="module">
+        import "/src/js/school/mypage/login.js";
+        import "/src/js/school/mypage/system.js";
+        import "/src/js/load.js";
+        import "/src/js/animation.js";
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+.existing-system {
+    position: relative;
+    width: 100%;
+    margin: 14px 0;
+    padding: 18px;
+    box-sizing: border-box;
+}
+
+.existing-system-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.existing-system-card:hover,
+.existing-system-card:focus {
+    transform: translateY(-3px);
+    border-color: rgba(37, 99, 235, 0.45);
+    box-shadow: 0 16px 38px rgba(17, 24, 39, 0.2);
+    outline: none;
+}
+
+.existing-system-card:hover .system-name:after {
+    transition:all 0.5s ease-in-out;
+    width:50%;
+}
+
+.system-card-meta {
+    margin: 0;
+    color: var(--site-muted);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.system-name {
+    position: relative;
+    z-index: 3;
+    margin: 0 0 14px;
+    color: var(--site-text);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.system-name::after {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 3px;
+    margin-top: 8px;
+    border-radius: 999px;
+    background: rgba(127, 29, 29, 0.9);
+    transform: none;
+    transition:all 0.5s ease-in-out;
+}
+
+.existing-system-btn-wrap {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    height: auto;
+    z-index: 4;
+}
+
+.system-edit-btn,
+.system-delete-btn,
+.system-share,
+.system-password-share-btn {
+    position: static;
+    height: auto;
+    margin: 0;
+    font-size: 14px;
+}
+
+.system-share {
+    color: #fff;
+    background: rgba(37, 99, 235, 0.9);
+}
+
+.system-delete-btn {
+    color: #fff;
+    background: rgba(185, 28, 28, 0.92);
+}
+
+.existing-system-popup {
+    visibility: hidden;
+    position: fixed;
+    top: 50dvh;
+    left: 50dvw;
+    width: min(620px, calc(100dvw - 40px));
+    max-height: min(70dvh, 560px);
+    min-height: 260px;
+    box-sizing: border-box;
+    padding: 34px 28px 28px;
+    overflow: auto;
+    z-index: 260;
+    opacity: 0;
+    transform: translate(-50%, -48%);
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: var(--site-radius);
+    box-shadow: 0 18px 48px rgba(17, 24, 39, 0.22);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.existing-system-popup.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.existing-system-popup-wrap {
+    position: static;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    text-align: left;
+}
+
+.share-passcode-list {
+    width: 100%;
+    max-height: 320px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.share-passcode-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.share-passcode-list table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid rgba(17, 24, 39, 0.12);
+    font-size: 15px;
+}
+
+.share-passcode-list td:nth-child(2) {
+    width: 35%;
+}
+
+.share-passcode-list tr:first-child {
+    color: #fff;
+    background: rgba(127, 29, 29, 0.9);
+    font-weight: 700;
+}
+
+.share-systemlink-btn {
+    width: auto;
+    margin-top: 18px;
+    color: #fff;
+    background: rgba(37, 99, 235, 0.9);
+}
+
+.share-copiedlabel {
+    display: inline-flex;
+    margin: 18px 0 0 10px;
+    padding: 6px 10px;
+    color: var(--site-text);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(17, 24, 39, 0.14);
+    border-radius: var(--site-radius);
+    font-weight: 700;
+    visibility: hidden;
+}
+
+.share-copiedlabel.copied {
+    visibility: visible;
+}
+
+.edit-root {
+    display: grid;
+    gap: 18px;
+}
+
+.edit-table-section {
+    padding: 18px;
+}
+
+.edit-table-section h2 {
+    margin: 0 0 12px;
+    color: var(--site-text);
+    font-size: 20px;
+}
+
+.edit-table-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.edit-table-heading h2 {
+    margin: 0;
+}
+
+.edit-add-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+    padding: 14px;
+    border: 1px dashed rgba(37, 99, 235, 0.38);
+    border-radius: var(--site-radius);
+    background: rgba(239, 246, 255, 0.45);
+}
+
+.edit-add-form[hidden] {
+    display: none;
+}
+
+.edit-add-form label {
+    display: grid;
+    gap: 4px;
+    color: var(--site-muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.edit-add-form input,
+.edit-add-form select,
+.edit-row select {
+    width: 100%;
+    min-height: 42px;
+    box-sizing: border-box;
+    padding: 9px 10px;
+    border: 1px solid rgba(17, 24, 39, 0.14);
+    border-radius: var(--site-radius);
+    color: var(--site-text);
+    background: rgba(255, 255, 255, 0.72);
+    font-family: var(--site-font);
+}
+
+.edit-add-submit {
+    align-self: end;
+    color: #fff !important;
+    background: rgba(37, 99, 235, 0.9) !important;
+}
+
+.league-team-group {
+    margin: 14px 0;
+    padding: 14px;
+    border-left: 4px solid rgba(127, 29, 29, 0.42);
+    border-radius: var(--site-radius);
+    background: rgba(255, 255, 255, 0.32);
+}
+
+.league-team-group h3 {
+    margin: 0 0 6px;
+    color: var(--site-text);
+    font-size: 17px;
+}
+
+.league-team-group-meta {
+    margin: 0 0 8px;
+    color: var(--site-muted);
+    font-size: 12px;
+}
+
+.edit-empty {
+    margin: 0;
+    color: var(--site-muted);
+}
+
+.edit-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    padding: 14px 0;
+    border-top: 1px solid rgba(17, 24, 39, 0.12);
+}
+
+.edit-row label {
+    display: grid;
+    gap: 4px;
+    color: var(--site-muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.edit-row input {
+    width: 100%;
+    padding: 9px 10px;
+}
+
+.edit-row input[readonly] {
+    color: rgba(17, 24, 39, 0.58);
+    background: rgba(255, 255, 255, 0.36);
+}
+
+.edit-row-actions {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+}
+
+.edit-save {
+    color: #fff !important;
+    background: rgba(37, 99, 235, 0.9) !important;
+}
+
+.edit-delete {
+    color: #fff !important;
+    background: rgba(185, 28, 28, 0.92) !important;
+}
+
+.system-detail-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+    gap: 18px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.system-detail-sidebar {
+    box-sizing: border-box;
+    height: calc(100dvh - 156px);
+    min-height: 560px;
+    padding: 22px;
+    overflow: auto;
+}
+
+.system-detail-sidebar section {
+    margin: 18px 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(17, 24, 39, 0.12);
+}
+
+.system-detail-sidebar h2 {
+    margin: 0 0 10px;
+    font-size: 17px;
+}
+
+.system-detail-sidebar button {
+    width: 100%;
+    margin: 6px 0;
+}
+
+.password-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 7px 0;
+    padding: 8px 10px;
+    border-radius: var(--site-radius);
+    background: rgba(255, 255, 255, 0.52);
+}
+
+.system-detail-main {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+#delete-semester {
+    color: #fff;
+    background: rgba(185, 28, 28, 0.92);
+}
+
+@media (max-width: 900px) {
+    .system-detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .system-detail-sidebar {
+        height: auto;
+        min-height: 0;
+    }
+}
+
+

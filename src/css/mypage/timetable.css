@@ -1,0 +1,106 @@
+.timetable-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 12px 0; }
+.timetable-row label { display: grid; gap: 6px; min-width: 0; }
+.timetable-row input { box-sizing: border-box; max-width: 100%; padding: 8px; }
+.timetable-row select { box-sizing: border-box; max-width: 100%; padding: 8px; }
+.timetable-row input:disabled { color: #555; background: #eee; }
+.timetable-row input[type="number"] { width: 140px; }
+.timetable-estimate { box-sizing: border-box; margin: 0 0 1px auto; padding: 10px 12px; border-radius: 6px; background: #eef5f0; color: #23432d; font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+.timetable-sport-estimate { flex: 1 1 340px; max-width: 680px; }
+.timetable-day-estimate { flex: 1 1 300px; max-width: 560px; }
+.timetable-estimate[data-capacity="over"] { background: #fff0ef; color: #8a2019; }
+.timetable-estimate[data-capacity="unknown"] { background: #f2f2f2; color: #555; }
+.timetable-day, #timetable-sports fieldset { min-width: 0; margin: 16px 0; padding: 16px; border: 1px solid #aaa; border-radius: 6px; }
+#create-timetable button { padding: 8px 12px; cursor: pointer; }
+#create-timetable .form-label { display: grid; gap: 8px; margin-top: 20px; }
+#create-timetable-import { margin-top: 32px; min-width: 0; }
+#timetable-json-input { box-sizing: border-box; width: 100%; padding: 12px; font: 13px monospace; margin: 12px 0; }
+#create-timetable-import button, #timetable-proposal-select { padding: 8px 12px; }
+.timetable-file-label { display: inline-flex; align-items: center; gap: 8px; margin: 0 10px 10px 0; }
+.timetable-issues { margin: 12px 0; padding: 12px; border-left: 4px solid #a66300; background: #fff9e8; overflow-wrap: anywhere; color: #493300; }
+.timetable-issues.error { border-color: #b3261e; background: #fff0ef; color: #701912; }
+.timetable-issues li { margin: 8px 0; }
+.timetable-table-scroll { box-sizing: border-box; min-width: 0; max-width: 100%; overflow-x: auto; margin: 16px 0; }
+.timetable-table-scroll table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.timetable-table-scroll th, .timetable-table-scroll td { padding: 10px; border-bottom: 1px solid #bbb; text-align: left; }
+.timetable-table-scroll th { white-space: nowrap; }
+.timetable-table-scroll caption { text-align: left; padding: 10px 0; }
+.draft-toolbar, .section-draft-toolbar, .timetable-preview-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 16px 0; }
+.timetable-preview-actions > * { box-sizing: border-box; min-width: 0; max-width: 100%; }
+.timetable-preview-actions select { max-width: 100%; }
+.draft-toolbar label { display: grid; gap: 6px; }
+.draft-toolbar button, .section-draft-toolbar button, .timetable-preview-actions button { padding: 8px 12px; }
+.draft-toolbar select { padding: 8px; max-width: 100%; }
+#create-draft-status { flex-basis: 100%; overflow-wrap: anywhere; }
+.template-editor-panel { position: fixed; inset: 0 0 0 auto; margin: 0; width: min(1000px, 86vw); max-width: 100vw; height: 100dvh; max-height: 100dvh; box-sizing: border-box; border: 0; padding: 0; background: #fff; color: #20242a; box-shadow: -8px 0 32px #0003; }
+.template-editor-panel[open] { display: flex; flex-direction: column; }
+.template-editor-panel::backdrop { background: #0004; }
+.template-editor-heading, .template-editor-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 14px 20px; }
+.template-editor-heading { justify-content: space-between; border-bottom: 1px solid #ccc; }
+.template-editor-heading h2 { font-size: 18px; margin: 0; }
+.template-editor-heading button { width: 36px; height: 36px; font-size: 24px; }
+.template-editor-actions { border-top: 1px solid #ccc; }
+.template-editor-actions button { padding: 10px 16px; }
+#template-editor-status { overflow-wrap: anywhere; }
+#template-editor-frame { flex: 1; min-height: 0; width: 100%; border: 0; }
+.timetable-preview-actions[hidden] { display: none; }
+
+.timetable-date-page { margin-bottom: 28px; color: #20242a; background: white; }
+.timetable-axis-page h3 { margin: 0; text-align: center; font-size: 22px; }
+.timetable-date-heading { text-align: center; margin: 8px 0 16px; }
+.timetable-axis-scroll { overflow-x: auto; border: 1px solid #89978f; background: white; }
+.timetable-axis-grid { display: grid; grid-template-rows: 34px 36px 26px var(--axis-height); }
+.timetable-axis-sport, .timetable-axis-corner, .timetable-axis-court, .timetable-axis-team-head { display: flex; align-items: center; justify-content: center; text-align: center; border-right: 1px solid #89978f; border-bottom: 1px solid #89978f; background: #e8f0ea; box-sizing: border-box; padding: 2px; font-size: 13px; overflow-wrap: anywhere; }
+.timetable-axis-sport { font-size: 15px; font-weight: bold; }
+.timetable-axis-team-head { display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
+.timetable-axis-team-head span + span { border-left: 1px solid #89978f; }
+.timetable-axis-body { display: grid; position: relative; grid-row: 4; height: var(--axis-height); }
+.timetable-axis-times, .timetable-axis-lane { grid-row: 1; position: relative; height: var(--axis-height); border-right: 1px solid #aab5ae; box-sizing: border-box; }
+.timetable-axis-times { background: #f7f9f7; }
+.timetable-axis-tick { position: absolute; left: 0; right: 0; text-align: center; font-size: 11px; line-height: 12px; border-top: 1px solid #c7d2cc; }
+.timetable-axis-line { position: absolute; left: 0; right: 0; border-top: 1px solid #e5ebe7; pointer-events: none; }
+.timetable-axis-event { position: absolute; left: 0; right: 0; z-index: 3; display: flex; justify-content: center; align-items: center; box-sizing: border-box; overflow: hidden; background: #fff0bc; border-block: 1px solid #b9a35c; font-size: 13px; font-weight: bold; }
+.timetable-axis-card { position: absolute; left: 0; right: 0; z-index: 2; box-sizing: border-box; margin: 0; padding: 0; border: 0; outline: 1px solid #89978f; outline-offset: -1px; border-radius: 0; background: #eef1ee; overflow: hidden; }
+.timetable-axis-card-match { position: absolute; left: 0; right: 0; display: grid; grid-template-columns: 1fr 1fr; background: white; box-sizing: border-box; border-block: 1px solid #b2beb5; }
+.timetable-axis-team { display: flex; align-items: center; justify-content: center; text-align: center; font-size: 12px; line-height: 1.15; overflow-wrap: anywhere; min-width: 0; padding: 0 3px; }
+.timetable-axis-team + .timetable-axis-team { border-left: 1px solid #89978f; }
+.timetable-footer { display: flex; justify-content: flex-end; align-items: center; gap: 12px; padding-top: 10px; font-size: 13px; }
+.timetable-footer > span:first-child, .timetable-footer > small { display: none; }
+.timetable-logo { font-weight: 900; letter-spacing: 3px; font-size: 26px; }
+.timetable-table-details { margin-top: 20px; overflow: auto; }
+.timetable-table-details summary { cursor: pointer; font-weight: bold; }
+.timetable-record-page table { border-collapse: collapse; font-size: 12px; }
+.timetable-record-page td, .timetable-record-page th { border: 1px solid #bbb; padding: 6px; }
+.timetable-print-pages { display: none; }
+@media (max-width: 600px) { .template-editor-panel { width: 100vw; } }
+@media print {
+  @page { size: A4 landscape; margin: 8mm; }
+  body:not(.print-documents) > *:not(main), body:not(.print-documents) main > *:not(#create-timetable-import), body:not(.print-documents) #create-timetable-import > *:not(#timetable-preview) { display: none !important; }
+  body, main.box, #create-timetable-import { margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: none !important; background: white !important; box-shadow: none !important; border: 0 !important; }
+  #timetable-preview { overflow: visible; margin: 0; }
+  .timetable-screen-pages, .timetable-table-details { display: none !important; }
+  .timetable-print-pages { display: block; }
+  .timetable-print-page { break-before: page; break-inside: avoid; margin: 0; }
+  .timetable-print-page:first-child { break-before: auto; }
+  .timetable-axis-scroll { overflow: visible; }
+  .timetable-axis-grid { width: 100%; min-width: 0 !important; grid-template-rows: 24px 24px 18px var(--axis-height); }
+  .timetable-axis-page h3 { font-size: 15px; line-height: 1.1; }
+  .timetable-date-heading { margin: 3px 0 6px; font-size: 10px; }
+  .timetable-axis-sport { font-size: 10px; line-height: 1.05; padding: 1px; }
+  .timetable-axis-corner, .timetable-axis-court { font-size: 9px; line-height: 1.05; padding: 1px; }
+  .timetable-axis-team-head { font-size: 8px; line-height: 1; }
+  .timetable-axis-team { font-size: 9px; line-height: 1.05; padding: 0 2px; overflow: hidden; }
+  .timetable-axis-tick { font-size: 8px; line-height: 9px; }
+  .timetable-axis-event { font-size: 9px; line-height: 1.05; }
+  .timetable-footer { padding-top: 3px; min-height: 18px; }
+  .timetable-footer > small { display: inline; margin-right: auto; font-size: 9px; }
+  .timetable-logo { font-size: 15px; letter-spacing: 2px; }
+  .timetable-logo img { width: 18px; height: 18px; }
+  .timetable-axis-page { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+
+.timetable-logo { display: flex; align-items: center; gap: 5px; }
+.timetable-logo img { width: 30px; height: 30px; object-fit: contain; }
+
+.timetable-axis-team { color: inherit; }
+
+@media print { body.print-documents main > *:not(#tournament-documents), body.print-documents #tournament-documents > .no-print { display:none!important; } .document-sheet[hidden] { display:none!important; } }

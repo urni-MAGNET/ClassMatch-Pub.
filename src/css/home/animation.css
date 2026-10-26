@@ -1,0 +1,113 @@
+.classmatch-loading {
+    position: fixed;
+    z-index: 9999;
+    top:0;
+    left: 0;
+    width: 100%;
+    height:100%;
+}
+.classmatch-loading.loaded{
+    animation: loading-background-blur 0.6s ease 1s forwards;
+}
+.loading-background img {
+  height:100dvh;
+  width: 100dvw;
+}
+.loading-blur {
+    position: fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;    
+    background: rgba(255, 255, 255, 0.01);
+    z-index: 10001;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    animation: loading-background-blur 0.6s ease 3s forwards;
+}
+.loading-blur.loaded{
+    animation: loading-background-blur 0.6s ease 1s forwards;
+}
+
+.loading-bar {
+    position: fixed;
+    width: 100%;
+    height: 3%;
+    background:rgba(213, 0, 21, 0.219);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: -7px -3px 8px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid white;
+    bottom: 0;
+    left:0;
+    animation: loading-bar 1.5s ease-in-out;
+}
+.loading-bar.loaded{
+    animation: loading-bar 1s ease-in-out,loading-background-blur 0.6s ease 1s forwards;
+}
+@keyframes loading-bar {
+    0% {
+        width:0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+.classmatch-loading .loading-animation img {
+  width: 50vmin;
+  height: 50vmin;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+}
+.loading-red {
+  animation: redBall 1.5s infinite;
+}
+@keyframes loading-background-blur {
+    0% {
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(00px);
+       
+    }
+    20% {
+        backdrop-filter: blur(100px);
+        -webkit-backdrop-filter: blur(100px);      
+         opacity: 1;
+    }
+    100% {
+
+        opacity: 0;  
+        visibility: hidden; 
+    }
+}
+@keyframes redBall {
+  0% {
+    transform: translate(-50%, -50%);
+    animation-timing-function: ease-out;
+  }
+
+  30% {
+    transform: translate(-50%, calc(-50% - 200px));
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: translate(-50%, -50%);
+    animation-timing-function: ease-out;
+  }
+
+  72% {
+    transform: translate(-50%, calc(-50% - 45px));
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}

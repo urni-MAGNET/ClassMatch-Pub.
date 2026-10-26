@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アカウント管理 | Classmatch MAGNET</title>
+    <meta name="author" content="urni - magnet">
+    <link rel="canonical" href="https://classmatch.kagomag.net">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/img/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/img/icon.png">
+    <link rel="stylesheet" href="/mypage/style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body class="site-page mypage-page mypage-detail-page">
+    <header class="header">
+        <p class="header-title">Mypage / アカウント管理<small>v1.0.0</small></p>
+    </header>
+
+    <div class="classmatch-background" aria-hidden="true">
+        <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+        </picture>
+    </div>
+
+    <main class="box filter detail-box account-page-box">
+        <h1 class="title">アカウント管理</h1>
+        <p class="schoolname">学校名</p>
+
+        <section class="account-panel filter">
+            <h2>登録内容の編集</h2>
+            <label>アカウント名
+                <input id="account-name-input" class="filter" type="text" maxlength="80" autocomplete="organization">
+            </label>
+            <button id="school-dataedit" class="filter filterhover" type="button">更新</button>
+        </section>
+
+        <section class="account-panel filter">
+            <h2>パスワード編集</h2>
+            <label>現在のパスワード
+                <input id="current-password-input" class="filter" type="password" autocomplete="current-password">
+            </label>
+            <label>新しいパスワード
+                <input id="new-password-input" class="filter" type="password" minlength="8" pattern="(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{8,}" autocomplete="new-password" aria-describedby="password-policy-help"><p id="password-policy-help">半角英字と数字を両方含む8文字以上の英数字</p>
+            </label>
+            <button id="password-edit" class="filter filterhover" type="button">パスワードを更新</button>
+            <button id="password-reset-mail" class="filter filterhover" type="button">再発行メールを送信</button>
+        </section>
+        <section class="account-panel filter">
+            <h2>アカウント連携</h2>
+            <p>アカウントを連携します。</p>
+            <div class="account-link">Googleアカウント
+                <div id="google-account-link"></div>
+            </div>
+        </section>
+        <section class="account-panel filter danger">
+            <h2>アカウント削除</h2>
+            <p>削除する場合は、下の入力欄にアカウント名を入力してください。</p>
+            <input id="delete-account-name-input" class="filter" type="text" placeholder="アカウント名">
+            <button id="account-delete" class="filter filterhover" type="button">アカウントを削除</button>
+        </section>
+    </main>
+
+    <button class="filter filterhover mypage-logout" id="logout">ログアウト</button>
+    <dialog class="filter logout-checking" aria-labelledby="logout-title">
+        <h2 id="logout-title">ログアウトしますか？</h2>
+        <button type="button" id="logout-submit-btn">ログアウト</button>
+        <button type="button" id="logout-cancel-btn" autofocus>戻る</button>
+    </dialog>
+    <div class="commu-popup radius filter">
+      <div class="popup-title"></div>
+      <div class="popup-content"></div>
+    </div>
+
+    <script type="module">
+        import "/src/js/school/mypage/login.js";
+        import "/src/js/school/mypage/account.js";
+    </script>
+</body>
+
+</html>

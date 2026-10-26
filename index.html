@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>トップ | Classmatch MAGNET</title>
+    <meta name="author" content="urni - magnet">
+    <meta name="description" content="MAGNETは、どの学校でも使えるクラスマッチ向けの試合管理システムです。チーム管理から試合結果の管理、得点計算まで、運営に役立つ機能がそろっています。">
+    <link rel="canonical" href="https://classmatch.kagomag.net">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/img/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/img/icon.png">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="google-site-verification" content="e1UuobzFF9_BlNGXJIVBrNezcE0ZH_AdN_AjTZc3_c8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+<body class="site-page home-page">
+    <div class="classmatch-background" aria-hidden="true">
+        <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="/src/img/classmatch-background-static.svg">
+            <img src="/src/img/classmatch-background.svg" alt="">
+        </picture>
+    </div>
+
+    <header class="header site-header home-header">
+        <a href="/" class="site-logo home-logo">
+            <img src="/src/img/icon.png" alt="">
+            <span>ClassMatch | MAGNET</span>
+        </a>
+        <nav class="site-nav home-nav" aria-label="トップページ内メニュー">
+            <a href="#features">特徴</a>
+            <a href="#flow">流れ</a>
+            <a href="/login/index.html">ログイン</a>
+        </nav>
+        <button type="button" onclick="document.querySelector('.signup-popup').classList.add('active')" class="site-action home-action filter filterhover" id="signupbutton">
+            学校アカウントを作成
+        </button>
+    </header>
+
+    <main class="site-main home-main">
+        <section class="site-section home-section home-hero">
+            <div class="home-copy">
+                <p class="site-label home-label">学校行事の試合管理を、もっと扱いやすく。</p>
+                <h1>どの学校でも使える<br>クラスマッチ管理システム</h1>
+                <p class="home-lead">
+                    ClassMatch は、競技・リーグ・チーム・支部を学校ごとに設定できる試合管理システムです。
+                    固定された大会形式に縛られず、それぞれの学校の運営方法に合わせて使えます。
+                </p>
+                <div class="home-buttons">
+                    <button type="button" onclick="document.querySelector('.signup-popup').classList.add('active')" class="site-primary home-primary filterhover">
+                        使いはじめる
+                    </button>
+                    <a href="#features" class="site-secondary home-secondary filter filterhover">内容を見る</a>
+                </div>
+            </div>
+
+            <div class="home-panel filter" aria-label="ClassMatchで管理できる内容">
+                <p class="home-panel-title">管理できるもの</p>
+                <ul class="home-panel-list">
+                    <li><span>01</span> 実施学期・大会</li>
+                    <li><span>02</span> 競技・リーグ</li>
+                    <li><span>03</span> チーム・得点</li>
+                    <li><span>04</span> 支部連絡・結果共有</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="site-section home-section home-content" id="features">
+            <div class="home-section-head">
+                <p class="site-label home-label">Feature</p>
+                <h2>学校ごとの運営に合わせて使える</h2>
+            </div>
+            <div class="home-text-block filter">
+                <h3>どの学校でも導入しやすい</h3>
+                <p>
+                    競技名、リーグ名、参加チーム、担当支部を手動で追加できます。
+                    学年別、男女別、クラス別など、学校ごとに違う運営ルールへ合わせやすい構成です。
+                </p>
+            </div>
+            <div class="home-text-block filter">
+                <h3>支部ごとに入力を分担できる</h3>
+                <p>
+                    学校側が実施学期を作成すると、競技支部ごとのログイン情報を共有できます。
+                    担当支部が結果を入力し、全体へ反映する運用を想定しています。
+                </p>
+            </div>
+            <div class="home-text-block filter">
+                <h3>結果と連絡をすばやく共有</h3>
+                <p>
+                    試合結果や支部間の連絡は、Supabase のリアルタイム機能を使って反映されます。
+                    本部・支部・表示画面の情報差を減らすことを目指しています。
+                </p>
+            </div>
+        </section>
+
+        <section class="site-section home-section home-content" id="flow">
+            <div class="home-section-head">
+                <p class="site-label home-label">Flow</p>
+                <h2>基本の使い方</h2>
+            </div>
+            <div class="home-step filter">
+                <span>1</span>
+                <div>
+                    <h3>学校アカウントを作成</h3>
+                    <p>学校名とメールアドレスを登録して、管理用のマイページを用意します。</p>
+                </div>
+            </div>
+            <div class="home-step filter">
+                <span>2</span>
+                <div>
+                    <h3>大会内容を登録</h3>
+                    <p>実施学期、競技、リーグ、チーム、支部を学校の形に合わせて追加します。</p>
+                </div>
+            </div>
+            <div class="home-step filter">
+                <span>3</span>
+                <div>
+                    <h3>支部へ共有して運用</h3>
+                    <p>支部ログイン用リンクとパスコードを共有し、結果入力や連絡を分担します。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== トップページ更新分: 手動追加用セクション =====
+        <section class="site-section home-section home-content home-extra">
+            <div class="home-section-head">
+                <p class="site-label home-label">Custom</p>
+                <h2>紹介内容をあとから増やせます</h2>
+            </div>
+            <div class="home-text-block filter">
+                <h3>この section を複製して追加</h3>
+                <p>
+                    紹介したい内容が増えた場合は、このまとまりを複製して追加できます。
+                    見た目を大きく崩さず、説明量だけを増やせるようにしています。
+                </p>
+            </div>
+        </section>  -->
+    </main>
+
+    <!-- ===== 既存機能: 学校アカウント作成ポップアップ ===== -->
+    <div class="signup-popup">
+        <a class="quit" onclick="document.querySelector('.signup-popup').classList.remove('active')" aria-label="閉じる">
+            <span></span>
+            <span></span>
+        </a>
+        <div class="inputbox form-panel">
+            <p class="input-box-title form-title">学校アカウントを作成</p>
+            <input type="text" id="school-name" class="input-text form-input filter" placeholder="学校名を入力">
+            <input type="email" name="" id="school-email" class="input-text form-input filter" placeholder="メールアドレスを入力">
+            <div class="password-wrap">
+                <input name="" id="login-password" class="input-text form-input password filter" placeholder="パスワードを入力" type="password" minlength="8" pattern="(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{8,}" autocomplete="new-password" aria-describedby="password-policy-help">
+                <button type="button" class="visible" id="toggle-main">表示</button>
+            </div>
+            <p id="password-policy-help" class="password-policy-help">半角英字と数字を両方含む8文字以上の英数字</p>
+            <div class="password-wrap">
+                <input name="" id="login-password-re" class="input-text form-input password filter" placeholder="パスワードを再入力" type="password" minlength="8" pattern="(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{8,}" autocomplete="new-password" aria-describedby="password-policy-help">
+                <button type="button" class="visible" id="toggle-re">表示</button>
+            </div>
+            <p class="errormessage"></p>
+
+            <input type="submit" id="submit-account-btn" class="input-submit-btn form-submit filterhover" value="作成">
+            <div class="loginwithgoogle-btn">
+                <button class="gsi-material-button" id="signinWithGoogle">
+                    <div class="gsi-material-button-state"></div>
+                    <div class="gsi-material-button-content-wrapper">
+                    <div class="gsi-material-button-icon">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block;">
+                            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+                            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+                            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+                            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+                            <path fill="none" d="M0 0h48v48H0z"></path>
+                        </svg>
+                    </div>
+                    <span class="gsi-material-button-contents">Googleでサインイン</span>
+                    <span style="display: none;">Googleでサインイン/span>
+                    </div>
+                </button>
+            </div>
+            <a href="/login/index.html" class="login-link form-link">ログインはこちら</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import "/src/js/school/account.js";
+        import "/src/js/school/login.js";
+        import "/src/js/load.js";
+        import "/src/js/animation.js";
+    </script>
+</body>
+</html>
+
